@@ -88,7 +88,7 @@ const config: Config = {
       animation: {
         'fade-up': 'fade-up 0.6s ease-out both',
         'fade-in': 'fade-in 0.8s ease-out both',
-        marquee: 'marquee 26s linear infinite',
+        marquee: 'marquee 20s linear infinite',
         float: 'float 6s ease-in-out infinite',
         'float-delayed': 'float 6s ease-in-out 3s infinite',
       },
