@@ -119,7 +119,9 @@
   }
   .animate-fade-up,
   .animate-fade-in,
-  .animate-marquee {
+  .animate-marquee,
+  .animate-float,
+  .animate-float-delayed {
     animation: none !important;
   }
 }
