@@ -20,7 +20,7 @@ export default function SchoolsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-brand-700 text-white">
+      <section className="bg-deepNavy text-white">
         <Container className="py-16 sm:py-20">
           <Badge tone="white" icon="building">
             Six campuses, one group
@@ -126,7 +126,7 @@ export default function SchoolsPage() {
       {/* Need help choosing */}
       <section className="bg-white section-y">
         <Container>
-          <div className="grid items-center gap-8 rounded-3xl bg-brand-700 p-8 text-white sm:p-12 lg:grid-cols-[1.6fr_1fr]">
+          <div className="grid items-center gap-8 rounded-3xl bg-deepNavy p-8 text-white sm:p-12 lg:grid-cols-[1.6fr_1fr]">
             <div>
               <span className="eyebrow text-gold-300">Need help choosing?</span>
               <h2 className="mt-3 text-2xl font-bold sm:text-3xl">

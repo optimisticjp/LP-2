@@ -20,7 +20,7 @@ const config: Config = {
         ink: {
           DEFAULT: '#14305c',
           soft: '#566074',
-          muted: '#8b94a6',
+          muted: '#64748b',
         },
         gold: {
           50: '#fef8e6',
@@ -55,8 +55,10 @@ const config: Config = {
           600: '#4b5563',
           700: '#374151',
         },
-        mist: '#f4f7fb',
-        cloud: '#eef2f8',
+        mist: '#f6f8fb',
+        cloud: '#e4eaf1',
+        deepNavy: '#0b2344',
+        softBlue: '#eef4fa',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],

@@ -8,26 +8,26 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-ink text-white">
+    <footer className="bg-deepNavy text-white">
       <div className="container-x py-14">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_2.6fr]">
           <div>
             <Logo variant="light" mark="wide" />
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-brand-100">
               One trusted education group with campuses across {site.city}, sharing a commitment to
               academic excellence, values and holistic growth.
             </p>
             <div className="mt-6 flex flex-col gap-2 text-sm">
               <a
                 href={`tel:${site.primaryPhoneTel}`}
-                className="inline-flex items-center gap-2 text-white/80 hover:text-white"
+                className="inline-flex items-center gap-2 text-brand-100 hover:text-white"
               >
                 <Icon name="phone" className="h-4 w-4 text-gold-300" />
                 {site.primaryPhoneLabel}
               </a>
               <a
                 href={`mailto:${site.generalEmail}`}
-                className="inline-flex items-center gap-2 text-white/80 hover:text-white"
+                className="inline-flex items-center gap-2 text-brand-100 hover:text-white"
               >
                 <Icon name="mail" className="h-4 w-4 text-gold-300" />
                 {site.generalEmail}
@@ -36,7 +36,7 @@ export default function Footer() {
                 href={whatsappLink('Hi, I have an enquiry for L. P. Savani Group of Schools.')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/80 hover:text-white"
+                className="inline-flex items-center gap-2 text-brand-100 hover:text-white"
               >
                 <Icon name="whatsapp" className="h-4 w-4 text-gold-300" />
                 Chat on WhatsApp
@@ -55,7 +55,7 @@ export default function Footer() {
                     <li key={l.href}>
                       <Link
                         href={l.href}
-                        className="block py-1.5 text-sm leading-relaxed text-white/70 transition-colors hover:text-white"
+                        className="block py-1.5 text-sm leading-relaxed text-brand-100 transition-colors hover:text-white"
                       >
                         {l.label}
                       </Link>
@@ -69,7 +69,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-x flex flex-col items-center justify-between gap-3 py-5 text-xs text-white/55 sm:flex-row">
+        <div className="container-x flex flex-col items-center justify-between gap-3 py-5 text-xs text-brand-100 sm:flex-row">
           <p>&copy; {year} {site.name}. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>

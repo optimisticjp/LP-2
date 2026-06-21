@@ -80,7 +80,7 @@ export default function HomePage() {
             </p>
 
             {/* Trust line */}
-            <p className="mt-6 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-ink-muted">
+            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-ink-muted">
               {site.stats[0].value}&nbsp;students &nbsp;|&nbsp; {site.stats[1].value}&nbsp;faculty &nbsp;|&nbsp; {site.stats[2].value}&nbsp;years &nbsp;|&nbsp; Campuses across {site.city}
             </p>
 
@@ -137,7 +137,7 @@ export default function HomePage() {
 
               {/* Floating gold chip — admissions year, top-right */}
               <div className="absolute right-4 top-6 hidden animate-float-delayed rounded-2xl bg-gold-400 px-4 py-3 text-ink shadow-card md:block">
-                <div className="text-[0.65rem] font-semibold uppercase tracking-wider">Admissions</div>
+                <div className="text-xs font-semibold uppercase tracking-wider">Admissions</div>
                 <div className="text-lg font-extrabold leading-none">{site.admissionsYear}</div>
               </div>
             </div>
@@ -221,7 +221,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. Learning experience */}
-      <section className="relative overflow-hidden bg-ink section-y text-white">
+      <section className="relative overflow-hidden bg-deepNavy section-y text-white">
         <Container>
           <SectionHeading
             light

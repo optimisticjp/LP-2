@@ -13,7 +13,7 @@ export default function BranchLanding({ school }: { school: School }) {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-ink text-white">
+      <section className="relative bg-deepNavy text-white">
         <div className="absolute inset-0">
           <Img src={school.hero} alt={`${school.name} campus`} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/70 to-ink/40" />

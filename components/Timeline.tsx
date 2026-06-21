@@ -27,10 +27,10 @@ export default function Timeline({ items, accent = 'brand' }: { items: TimelineI
             <div className="flex flex-wrap items-center gap-2">
               <h3 className="text-base font-bold text-ink">{item.title}</h3>
               {item.tag ? (
-                <span className="pill bg-gold-50 text-[11px] text-gold-600">{item.tag}</span>
+                <span className="pill bg-gold-50 text-xs text-gold-600">{item.tag}</span>
               ) : null}
             </div>
-            {item.body ? <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{item.body}</p> : null}
+            {item.body ? <p className="mt-1.5 text-base leading-relaxed text-ink-soft">{item.body}</p> : null}
             {item.points ? (
               <ul className="mt-2 space-y-1.5">
                 {item.points.map((p) => (

@@ -30,7 +30,7 @@ export default function MobileStickyCTA() {
                 href={it.href}
                 target={it.href.startsWith('http') ? '_blank' : undefined}
                 rel={it.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="flex flex-col items-center gap-1 py-2.5 text-[11px] font-semibold text-ink-soft"
+                className="flex flex-col items-center gap-1 py-2.5 text-xs font-semibold text-ink-soft"
               >
                 <Icon name={it.icon} className="h-5 w-5 text-brand-600" />
                 {it.label}
@@ -40,7 +40,7 @@ export default function MobileStickyCTA() {
             <li key={it.label}>
               <Link
                 href={it.href}
-                className={`flex flex-col items-center gap-1 py-2.5 text-[11px] font-semibold ${
+                className={`flex flex-col items-center gap-1 py-2.5 text-xs font-semibold ${
                   it.primary ? 'bg-brand-600 text-white' : 'text-ink-soft'
                 }`}
               >

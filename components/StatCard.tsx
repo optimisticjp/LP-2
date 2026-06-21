@@ -15,7 +15,7 @@ export default function StatCard({ value, label, sub, light = false }: Props) {
       }`}
     >
       <div
-        className={`font-display text-4xl font-semibold sm:text-5xl ${
+        className={`font-sans text-4xl font-bold sm:text-5xl ${
           light ? 'text-gold-300' : 'text-brand-600'
         }`}
       >

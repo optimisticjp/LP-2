@@ -101,7 +101,7 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
                         <span className="flex items-center gap-1.5">
                           <span className="truncate text-sm font-semibold text-ink">{s.name}</span>
                           {s.flagship ? (
-                            <span className="pill bg-gold-50 text-[10px] text-gold-600">Flagship</span>
+                            <span className="pill bg-gold-50 text-xs text-gold-600">Flagship</span>
                           ) : null}
                         </span>
                         <span className="mt-0.5 flex items-center gap-1.5 text-xs text-ink-muted">
@@ -129,7 +129,7 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
           </div>
 
           {/* Need help choosing — compact help card (scrolls with the menu) */}
-          <div className="mt-3 rounded-xl bg-brand-600 p-4 text-white">
+          <div className="mt-3 rounded-xl bg-deepNavy p-4 text-white">
             <p className="text-sm font-bold">Not sure which campus?</p>
             <p className="mt-1 text-xs leading-relaxed text-brand-100">
               Tell us your area and preferred board — we&rsquo;ll help you find the right fit.

@@ -30,7 +30,7 @@ export default function ProposalPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-ink text-white">
+      <section className="relative overflow-hidden bg-deepNavy text-white">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-brand-600/40 blur-3xl"
@@ -127,7 +127,7 @@ export default function ProposalPage() {
 
           {/* 7. Next step */}
           <ProposalSection index={7} eyebrow="Let's begin" title={nextStep.title}>
-            <div className="rounded-3xl bg-brand-700 p-8 text-white sm:p-10">
+            <div className="rounded-3xl bg-deepNavy p-8 text-white sm:p-10">
               <p className="text-lg leading-relaxed text-brand-50">{nextStep.body}</p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link href="/schools/palanpor" className="btn-gold">

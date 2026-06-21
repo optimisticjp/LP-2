@@ -157,7 +157,7 @@ export default function AboutPage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:max-w-2xl">
             {leadership.map((l) => (
               <div key={l.name} className="flex items-center gap-4 rounded-2xl border border-cloud bg-white p-5 shadow-soft">
-                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-brand-600 text-lg font-bold text-white">
+                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-brand-700 text-lg font-bold text-white">
                   {l.name.split(' ').map((w) => w[0]).slice(0, 2).join('')}
                 </span>
                 <div>

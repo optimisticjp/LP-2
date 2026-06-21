@@ -36,7 +36,7 @@ export default function FAQAccordion({ items }: { items: FAQ[] }) {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="px-5 pb-5 text-sm leading-relaxed text-ink-soft sm:px-6">{item.a}</p>
+                <p className="px-5 pb-5 text-base leading-relaxed text-ink-soft sm:px-6">{item.a}</p>
               </div>
             </div>
           </div>

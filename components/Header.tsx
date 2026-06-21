@@ -77,9 +77,9 @@ export default function Header() {
                   onClick={() => setMegaOpen((v) => !v)}
                   aria-expanded={megaOpen}
                   aria-haspopup="true"
-                  className={`flex items-center gap-1 rounded-btn-sm px-3.5 py-2 text-sm font-semibold transition-colors ${
+                  className={`relative flex items-center gap-1 rounded-btn-sm px-3.5 py-2 text-sm font-semibold transition-colors ${
                     isActive('/schools') || megaOpen ? 'text-brand-600' : 'text-ink-soft hover:text-brand-600'
-                  }`}
+                  } ${isActive('/schools') ? "after:absolute after:inset-x-3.5 after:bottom-1 after:h-0.5 after:rounded-full after:bg-red-500 after:content-['']" : ''}`}
                 >
                   Schools
                   <Icon
@@ -92,8 +92,10 @@ export default function Header() {
               <Link
                 key={l.href}
                 href={l.href}
-                className={`rounded-btn-sm px-3.5 py-2 text-sm font-semibold transition-colors ${
-                  isActive(l.href) ? 'text-brand-600' : 'text-ink-soft hover:text-brand-600'
+                className={`relative rounded-btn-sm px-3.5 py-2 text-sm font-semibold transition-colors ${
+                  isActive(l.href)
+                    ? "text-brand-600 after:absolute after:inset-x-3.5 after:bottom-1 after:h-0.5 after:rounded-full after:bg-red-500 after:content-['']"
+                    : 'text-ink-soft hover:text-brand-600'
                 }`}
               >
                 {l.label}

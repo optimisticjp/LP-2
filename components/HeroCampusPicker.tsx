@@ -12,7 +12,7 @@ export default function HeroCampusPicker() {
 
   return (
     <div className="mt-8 border-t border-cloud pt-6">
-      <p className="mb-3 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-ink-muted">
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-ink-muted">
         Choose your campus to begin
       </p>
 
@@ -34,7 +34,7 @@ export default function HeroCampusPicker() {
             >
               <span className="leading-tight">{s.shortName}</span>
               <span
-                className={`text-[0.6rem] leading-tight ${active ? 'text-brand-200' : 'text-ink-muted'}`}
+                className={`text-xs leading-tight ${active ? 'text-brand-200' : 'text-ink-muted'}`}
               >
                 {s.board}
               </span>

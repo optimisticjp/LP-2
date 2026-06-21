@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 
 const baseField =
-  'w-full rounded-xl border border-brand-100 bg-white px-4 py-3 text-sm text-ink placeholder:text-ink-muted/70 shadow-sm transition-colors focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-200';
+  'w-full rounded-xl border border-brand-100 bg-white px-4 py-3 text-base text-ink placeholder:text-ink-muted shadow-sm transition-colors focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-200';
 
 type FieldWrapProps = {
   label: string;
@@ -17,8 +17,8 @@ type FieldWrapProps = {
 export function Field({ label, htmlFor, required, error, children, className = '' }: FieldWrapProps) {
   return (
     <div className={className}>
-      <label htmlFor={htmlFor} className="mb-1.5 block text-sm font-medium text-ink">
-        {label} {required ? <span className="text-gold-500">*</span> : null}
+      <label htmlFor={htmlFor} className="mb-1.5 block text-sm font-semibold text-ink">
+        {label} {required ? <span className="text-red-500" aria-hidden="true">*</span> : null}
       </label>
       {children}
       {error ? (

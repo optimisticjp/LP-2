@@ -12,11 +12,24 @@
 
   body {
     @apply bg-white text-ink antialiased font-sans;
+    font-size: 16px;
+    line-height: 1.7;
   }
 
-  h1, h2, h3, h4, h5 {
+  @media (min-width: 640px) {
+    body {
+      font-size: 17px;
+    }
+  }
+
+  /* Fraunces for big, emotional headings (h1/h2); Inter for functional ones */
+  h1, h2 {
     @apply font-display;
     letter-spacing: -0.02em;
+  }
+
+  h3, h4, h5 {
+    @apply font-sans;
   }
 
   ::selection {
@@ -43,12 +56,12 @@
 
   /* Eyebrow / section label */
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-gold-700;
+    @apply inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.12em] text-gold-600;
   }
 
   /* Buttons — radii follow the brand spec (primary 16px, secondary 4px) */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 font-semibold leading-none transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex items-center justify-center gap-2 font-bold leading-none transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-60;
   }
 
   .btn-primary {
@@ -60,7 +73,7 @@
   }
 
   .btn-gold {
-    @apply btn rounded-btn bg-gold-400 px-6 py-3.5 text-[15px] text-ink shadow-soft hover:bg-gold-500 hover:text-white active:translate-y-px;
+    @apply btn rounded-btn bg-gold-400 px-6 py-3.5 text-[15px] text-ink shadow-soft hover:bg-gold-600 active:translate-y-px;
   }
 
   .btn-ghost {
@@ -68,7 +81,7 @@
   }
 
   .btn-whatsapp {
-    @apply btn rounded-btn bg-[#1faf54] px-6 py-3.5 text-[15px] text-white shadow-soft hover:bg-[#1a9648] active:translate-y-px;
+    @apply btn rounded-btn bg-[#22B455] px-6 py-3.5 text-[15px] text-white shadow-soft hover:bg-[#1c9d49] active:translate-y-px;
   }
 
   .btn-white {

@@ -53,7 +53,7 @@ export default function InfrastructurePage() {
       })}
 
       {/* Campus experience pillars */}
-      <section className="bg-ink section-y text-white">
+      <section className="bg-deepNavy section-y text-white">
         <Container>
           <SectionHeading
             light

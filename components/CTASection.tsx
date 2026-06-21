@@ -18,7 +18,7 @@ export default function CTASection({
   return (
     <section className={`bg-white ${className}`}>
       <Container>
-        <div className="relative overflow-hidden rounded-3xl bg-brand-700 px-6 py-12 text-white sm:px-12 sm:py-16">
+        <div className="relative overflow-hidden rounded-3xl bg-deepNavy px-6 py-12 text-white sm:px-12 sm:py-16">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-brand-600/60 blur-2xl"

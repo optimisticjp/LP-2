@@ -27,7 +27,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
                   <span className="flex items-center gap-2">
                     <span className="truncate font-semibold text-ink">{s.name}</span>
                     {s.flagship ? (
-                      <span className="pill bg-gold-50 text-[10px] text-gold-600">Flagship</span>
+                      <span className="pill bg-gold-50 text-xs text-gold-600">Flagship</span>
                     ) : null}
                   </span>
                   <span className="mt-0.5 flex items-center gap-1.5 text-xs text-ink-muted">
@@ -60,7 +60,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           <div className="grid gap-x-4 gap-y-3 sm:grid-cols-3">
             {schoolsByBoard.map((g) => (
               <div key={g.board}>
-                <p className="text-[11px] font-bold uppercase tracking-wider text-ink-muted">{g.board}</p>
+                <p className="text-xs font-bold uppercase tracking-wider text-ink-muted">{g.board}</p>
                 <ul className="mt-1.5 space-y-0.5">
                   {g.schools.map((s) => (
                     <li key={s.slug}>
@@ -106,7 +106,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           </ul>
         </div>
 
-        <div className="flex flex-1 flex-col justify-between rounded-2xl bg-brand-600 p-6 text-white">
+        <div className="flex flex-1 flex-col justify-between rounded-2xl bg-deepNavy p-6 text-white">
           <div>
             <Icon name="sparkle" className="h-6 w-6 text-gold-300" />
             <h3 className="mt-3 text-lg font-bold leading-snug text-white">

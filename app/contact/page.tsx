@@ -21,7 +21,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-brand-700 text-white">
+      <section className="bg-deepNavy text-white">
         <Container className="py-16 sm:py-20">
           <Badge tone="white" icon="phone">
             Contact us
@@ -132,7 +132,7 @@ export default function ContactPage() {
       {/* WhatsApp CTA */}
       <section className="bg-mist pb-20 pt-4">
         <Container>
-          <div className="flex flex-col items-center justify-between gap-5 rounded-3xl bg-[#1faf54] p-8 text-center text-white sm:flex-row sm:p-10 sm:text-left">
+          <div className="flex flex-col items-center justify-between gap-5 rounded-3xl bg-[#22B455] p-8 text-center text-white sm:flex-row sm:p-10 sm:text-left">
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
               <Icon name="whatsapp" className="h-10 w-10" />
               <div>
