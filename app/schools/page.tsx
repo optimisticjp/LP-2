@@ -53,7 +53,7 @@ export default function SchoolsPage() {
       </section>
 
       {/* Compare campuses */}
-      <section className="bg-mist section-y">
+      <section id="compare" className="scroll-mt-28 bg-mist section-y">
         <Container>
           <SectionHeading
             eyebrow="Compare campuses"
@@ -97,13 +97,23 @@ export default function SchoolsPage() {
                         <span className="text-ink-muted">Group page</span>
                       )}
                     </td>
-                    <td className="px-5 py-4 text-right">
-                      <Link
-                        href={`/schools/${s.slug}`}
-                        className="inline-flex items-center gap-1 font-semibold text-brand-600 hover:text-brand-700"
-                      >
-                        View <Icon name="arrow" className="h-4 w-4" />
-                      </Link>
+                    <td className="px-5 py-4">
+                      <div className="flex items-center justify-end gap-3">
+                        <Link
+                          href={`/schools/${s.slug}`}
+                          className="inline-flex items-center gap-1 font-semibold text-brand-600 hover:text-brand-700"
+                        >
+                          View <Icon name="arrow" className="h-4 w-4" />
+                        </Link>
+                        <a
+                          href={s.admissionLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 font-semibold text-brand-700 hover:underline"
+                        >
+                          Enquire <Icon name="arrowUpRight" className="h-3.5 w-3.5" />
+                        </a>
+                      </div>
                     </td>
                   </tr>
                 ))}
