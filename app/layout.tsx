@@ -76,7 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <head>
         <link rel="icon" href={brand.assets.favicon} />
-        <link rel="apple-touch-icon" href={brand.assets.favicon} />
+        <link rel="apple-touch-icon" href={brand.assets.logoEmblem} />
       </head>
       <body className="min-h-screen pb-16 lg:pb-0">
         <a href="#main" className="skip-link">

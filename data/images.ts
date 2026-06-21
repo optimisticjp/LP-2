@@ -10,11 +10,10 @@ const G = 'https://s3.ap-south-1.amazonaws.com/media.lpsavani.org';
 const A = 'https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in';
 
 export const images = {
-  // Brand marks (official assets — currently rendered as a wordmark in the
-  // header/footer; these are kept here so they can be swapped in easily).
-  logoLight: `${G}/logo_1_ddd7c0bbd1.svg`,
-  logoGroup: `${G}/logo_e6167e6bc2.svg`,
-  favicon: `${G}/favicon_savani_c9d0d362bf.png`,
+  // Brand marks — local, self-hosted files in /public/brand (sharp, no remote load).
+  logoWide: '/brand/logo-wide.png',
+  logoEmblem: '/brand/logo-emblem.png',
+  favicon: '/brand/favicon.png',
   ogImage: `${G}/medium_lpsavani_pictures_12_fe48eb0ba2.png`,
 
   // Hero + storytelling (real campus / student photography)

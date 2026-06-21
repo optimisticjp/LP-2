@@ -41,7 +41,7 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
         }`}
       >
         <div className="flex items-center justify-between border-b border-cloud px-4 py-3">
-          <Logo />
+          <Logo mark="emblem" />
           <button
             type="button"
             onClick={onClose}

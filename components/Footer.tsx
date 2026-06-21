@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="container-x py-14">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_2.6fr]">
           <div>
-            <Logo variant="light" />
+            <Logo variant="light" mark="wide" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
               One trusted education group with campuses across {site.city}, sharing a commitment to
               academic excellence, values and holistic growth.
