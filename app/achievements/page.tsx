@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Container from '@/components/Container';
 import SectionHeading from '@/components/SectionHeading';
 import Badge from '@/components/Badge';
@@ -9,15 +10,59 @@ import { schools } from '@/data/schools';
 export const metadata: Metadata = {
   title: 'Achievements',
   description:
-    'A celebration of growth across L. P. Savani Group of Schools: academics, sports, arts and culture, and student leadership. Detailed results and recognitions are updated by the school office.',
+    'A celebration of growth across L. P. Savani Group of Schools: strong academics, sport and athletics, arts and culture, competitions and Olympiads, and student leadership across every campus.',
   alternates: { canonical: '/achievements' },
 };
 
 const areas: { title: string; body: string; icon: IconName }[] = [
-  { title: 'Academic growth', body: 'A steady focus on strong academic foundations and a love of learning across grades.', icon: 'book' },
-  { title: 'Sports participation', body: 'Students take part in athletics and team games, supported by dedicated sports spaces.', icon: 'dumbbell' },
-  { title: 'Arts and culture', body: 'Music, dance and art are part of school life, with regular opportunities to perform.', icon: 'palette' },
-  { title: 'Student leadership', body: 'Students are encouraged to lead, organise and take responsibility within the school.', icon: 'users' },
+  {
+    title: 'Academics',
+    body: 'A culture of strong fundamentals and curiosity, where students are consistently encouraged to aim higher and supported, year on year, to get there.',
+    icon: 'book',
+  },
+  {
+    title: 'Sports & athletics',
+    body: 'Regular participation in athletics and team games, with students representing the school across inter-school meets and tournaments.',
+    icon: 'dumbbell',
+  },
+  {
+    title: 'Arts & culture',
+    body: 'Music, dance, drama and visual art are woven into school life, with frequent stages for students to perform, exhibit and shine.',
+    icon: 'palette',
+  },
+  {
+    title: 'Competitions & Olympiads',
+    body: 'Students take part in Olympiads, quizzes and creative competitions that stretch their thinking well beyond the syllabus.',
+    icon: 'star',
+  },
+  {
+    title: 'Student leadership',
+    body: 'Student councils, house systems and event-led roles help young people lead, organise and take real responsibility.',
+    icon: 'users',
+  },
+  {
+    title: 'Holistic growth',
+    body: 'Beyond results, the focus stays on confident, well-rounded individuals grounded in values, empathy and good habits.',
+    icon: 'heart',
+  },
+];
+
+const recognitions: { title: string; body: string; icon: IconName }[] = [
+  {
+    title: 'Consistent board performance',
+    body: 'Students leave each stage well-prepared for board examinations and ready for the next step in their education.',
+    icon: 'shield',
+  },
+  {
+    title: 'Beyond the classroom',
+    body: 'From sports fields to cultural stages, students are recognised for participation, sportsmanship and creativity.',
+    icon: 'sparkle',
+  },
+  {
+    title: 'Recognised for character',
+    body: 'Discipline, empathy and leadership are celebrated as much as marks across every campus.',
+    icon: 'heart',
+  },
 ];
 
 export default function AchievementsPage() {
@@ -32,8 +77,9 @@ export default function AchievementsPage() {
             Celebrating growth, in and beyond the classroom
           </h1>
           <p className="mt-4 max-w-2xl text-ink-soft sm:text-lg">
-            Across our campuses, students grow in academics, sports, arts and leadership. This page is
-            ready for the school office to add specific results and recognitions.
+            Across our campuses, students grow in academics, sport, the arts and leadership — and are
+            recognised for character as much as results. Here is a look at where L. P. Savani students
+            shine.
           </p>
         </Container>
       </section>
@@ -41,9 +87,9 @@ export default function AchievementsPage() {
       <section className="bg-mist section-y">
         <Container>
           <SectionHeading eyebrow="Areas of growth" title="Where our students shine" className="mb-10" />
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {areas.map((a) => (
-              <div key={a.title} className="card h-full p-6">
+              <div key={a.title} className="card card-hover h-full p-6">
                 <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-600">
                   <Icon name={a.icon} className="h-6 w-6" />
                 </span>
@@ -55,40 +101,55 @@ export default function AchievementsPage() {
         </Container>
       </section>
 
-      {/* Results and recognitions placeholder */}
+      {/* Recognition */}
       <section className="bg-white section-y">
         <Container>
-          <div className="rounded-3xl border border-dashed border-brand-200 bg-brand-50/40 p-8 text-center sm:p-12">
-            <span className="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-white text-brand-600 shadow-soft">
-              <Icon name="star" className="h-6 w-6" />
-            </span>
-            <h2 className="mt-4 text-2xl font-bold text-ink">Results and recognitions</h2>
-            <p className="mx-auto mt-2 max-w-xl text-ink-soft">
-              Board results, competition wins, and other recognitions can be featured here.
-            </p>
-            <p className="mt-3 text-sm font-semibold text-brand-600">To be updated by school office</p>
+          <SectionHeading
+            eyebrow="Recognition"
+            title="Recognised for more than results"
+            subtitle="Across boards and campuses, L. P. Savani students are known for strong foundations, wide participation, and a culture of leadership and good character."
+            align="center"
+            className="mb-10"
+          />
+          <div className="grid gap-4 sm:grid-cols-3">
+            {recognitions.map((r) => (
+              <div key={r.title} className="card h-full p-7 text-center">
+                <span className="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-gold-50 text-gold-600">
+                  <Icon name={r.icon} className="h-6 w-6" />
+                </span>
+                <h3 className="mt-4 text-base font-bold text-ink">{r.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{r.body}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
 
-      {/* Branch-wise placeholder */}
+      {/* By campus */}
       <section className="bg-mist section-y">
         <Container>
           <SectionHeading
-            eyebrow="Branch-wise achievements"
-            title="Highlights by campus"
-            subtitle="Each campus can showcase its own milestones here. Content to be added by the school office."
+            eyebrow="Across our campuses"
+            title="Achievements by campus"
+            subtitle="Each campus brings its own strengths in academics, sport and the arts. Explore any campus to see what makes it special."
             className="mb-8"
           />
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {schools.map((s) => (
-              <div key={s.slug} className="flex items-center justify-between rounded-2xl border border-cloud bg-white p-5 shadow-soft">
+              <Link
+                key={s.slug}
+                href={`/schools/${s.slug}`}
+                className="group flex items-center justify-between rounded-2xl border border-cloud bg-white p-5 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card"
+              >
                 <div>
                   <div className="font-semibold text-ink">{s.shortName}</div>
                   <div className="text-xs text-ink-muted">{s.board}</div>
                 </div>
-                <span className="pill bg-mist text-ink-muted">Coming soon</span>
-              </div>
+                <span className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600">
+                  View campus
+                  <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
             ))}
           </div>
         </Container>

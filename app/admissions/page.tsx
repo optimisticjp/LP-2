@@ -129,8 +129,9 @@ export default function AdmissionsPage() {
                 </span>
                 <h3 className="mt-4 font-bold text-ink">Age criteria</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
-                  Age requirements vary by grade and campus. Please confirm the exact criteria for your
-                  child&rsquo;s grade with the campus office. <span className="text-ink-muted">Details to be updated by school office.</span>
+                  Age requirements follow each board&rsquo;s norms and vary slightly by grade. Share your
+                  child&rsquo;s date of birth with your enquiry and the admissions team will confirm the
+                  right grade and the exact age criteria for your chosen campus.
                 </p>
               </div>
               <div className="rounded-2xl border border-cloud bg-mist p-6">
@@ -139,8 +140,9 @@ export default function AdmissionsPage() {
                 </span>
                 <h3 className="mt-4 font-bold text-ink">Fee details</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
-                  Fee structure is shared by the campus office on enquiry, as it varies by campus, board
-                  and grade. <span className="text-ink-muted">Details to be updated by school office.</span>
+                  The fee structure varies by campus, board and grade. Send an enquiry and the campus
+                  office will share the complete, up-to-date fee details and the available payment
+                  options for your selected grade.
                 </p>
               </div>
             </div>

@@ -5,23 +5,36 @@ import Img from '@/components/Img';
 import Badge from '@/components/Badge';
 import ImageCard from '@/components/ImageCard';
 import CTASection from '@/components/CTASection';
-import { Icon } from '@/components/icons';
+import { Icon, type IconName } from '@/components/icons';
 import type { School } from '@/data/schools';
 import { whatsappLink } from '@/data/site';
 
 export default function BranchLanding({ school }: { school: School }) {
+  const phone = school.phones[0];
+  // Open the campus location in Google Maps (same source as the embedded map).
+  const directionsUrl = school.mapEmbed.replace('&output=embed', '').replace('?output=embed', '');
+
+  const facts: { icon: IconName; label: string; value: string }[] = [
+    { icon: 'map', label: 'Board', value: school.board },
+    { icon: 'pin', label: 'Location', value: school.location },
+    school.established
+      ? { icon: 'star', label: 'Established', value: school.established }
+      : { icon: 'star', label: 'Heritage', value: 'Part of a 20+ year group' },
+    { icon: 'building', label: 'Part of', value: 'L. P. Savani Group of Schools' },
+  ];
+
   return (
     <>
       {/* Hero */}
       <section className="relative bg-deepNavy text-white">
         <div className="absolute inset-0">
           <Img src={school.hero} alt={`${school.name} campus`} className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/70 to-ink/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-deepNavy/95 via-deepNavy/80 to-deepNavy/45" />
         </div>
         <Container className="relative py-16 sm:py-20">
           <Link
             href="/schools"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/80 hover:text-white"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-100 hover:text-white"
           >
             <Icon name="arrow" className="h-4 w-4 rotate-180" /> All schools
           </Link>
@@ -39,11 +52,43 @@ export default function BranchLanding({ school }: { school: School }) {
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-100 sm:text-lg">{school.tagline}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={school.admissionLink} target="_blank" rel="noopener noreferrer" className="btn-gold">
-              Enquire for admission
+              Start Admission Enquiry
             </a>
-            <Link href="/admissions#tour" className="btn-white">
-              Book a campus tour
-            </Link>
+            <a href={`tel:${phone.tel}`} className="btn-white">
+              <Icon name="phone" className="h-4 w-4" /> Call
+            </a>
+            <a
+              href={whatsappLink(`Hi, I have an admission enquiry for ${school.name}.`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-whatsapp"
+            >
+              <Icon name="whatsapp" className="h-4 w-4" /> WhatsApp
+            </a>
+          </div>
+        </Container>
+      </section>
+
+      {/* Quick facts band */}
+      <section className="bg-white">
+        <Container className="py-8 sm:py-10">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
+            {facts.map((f) => (
+              <div
+                key={f.label}
+                className="flex h-full items-start gap-3 rounded-2xl border border-cloud bg-white p-4 shadow-soft sm:p-5"
+              >
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-600">
+                  <Icon name={f.icon} className="h-5 w-5" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-xs font-semibold uppercase tracking-wider text-ink-muted">
+                    {f.label}
+                  </span>
+                  <span className="mt-0.5 block text-sm font-bold leading-snug text-ink">{f.value}</span>
+                </span>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
@@ -68,7 +113,7 @@ export default function BranchLanding({ school }: { school: School }) {
                   <ul className="mt-3 grid gap-3 sm:grid-cols-2">
                     {school.leadership.map((p) => (
                       <li key={p.name} className="flex items-center gap-3">
-                        <span className="grid h-10 w-10 place-items-center rounded-full bg-brand-600 text-sm font-bold text-white">
+                        <span className="grid h-10 w-10 place-items-center rounded-full bg-brand-700 text-sm font-bold text-white">
                           {p.name.split(' ').map((w) => w[0]).slice(0, 2).join('')}
                         </span>
                         <span>
@@ -112,9 +157,10 @@ export default function BranchLanding({ school }: { school: School }) {
             className="mb-10"
           />
           <div className="grid gap-4 sm:grid-cols-2">
-            {school.whyThisCampus.map((w) => (
-              <div key={w.title} className="card h-full p-6">
-                <h3 className="text-base font-bold text-ink">{w.title}</h3>
+            {school.whyThisCampus.map((w, i) => (
+              <div key={w.title} className="card card-hover h-full p-6">
+                <span className="text-sm font-bold text-gold-600">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="mt-2 text-base font-bold text-ink">{w.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">{w.body}</p>
               </div>
             ))}
@@ -128,7 +174,7 @@ export default function BranchLanding({ school }: { school: School }) {
           <SectionHeading
             eyebrow="Facilities"
             title="Facilities at this campus"
-            subtitle="Facilities may vary by campus. Please contact the admission office for the latest details."
+            subtitle="A glimpse of the spaces students learn and grow in. Specific facilities vary by campus — the admission office is glad to share the latest details."
             className="mb-8"
           />
           <div className="flex flex-wrap gap-2.5">
@@ -186,6 +232,9 @@ export default function BranchLanding({ school }: { school: School }) {
                 ) : null}
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
+                <a href={`tel:${phone.tel}`} className="btn-primary">
+                  <Icon name="phone" className="h-4 w-4" /> Call campus
+                </a>
                 <a
                   href={whatsappLink(`Hi, I have an admission enquiry for ${school.name}.`)}
                   target="_blank"
@@ -194,25 +243,39 @@ export default function BranchLanding({ school }: { school: School }) {
                 >
                   <Icon name="whatsapp" className="h-4 w-4" /> WhatsApp
                 </a>
-                <Link href="/contact" className="btn-secondary">
-                  All campus contacts
-                </Link>
               </div>
+              <Link
+                href="/contact"
+                className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700"
+              >
+                All campus contacts
+                <Icon name="arrow" className="h-4 w-4" />
+              </Link>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-cloud shadow-soft">
-              <iframe
-                src={school.mapEmbed}
-                title={`Map of ${school.name}`}
-                loading="lazy"
-                className="h-full min-h-[280px] w-full"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+            <div className="flex flex-col gap-3">
+              <div className="overflow-hidden rounded-2xl border border-cloud shadow-soft">
+                <iframe
+                  src={school.mapEmbed}
+                  title={`Map of ${school.name}`}
+                  loading="lazy"
+                  className="h-[300px] w-full sm:h-[360px]"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+              <a
+                href={directionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary w-full justify-center sm:w-auto"
+              >
+                <Icon name="pin" className="h-4 w-4" /> Get directions
+              </a>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* Future dedicated website */}
+      {/* Part of the group */}
       <section className="bg-mist py-12">
         <Container>
           <div className="flex flex-col items-start justify-between gap-5 rounded-3xl border border-cloud bg-white p-7 sm:flex-row sm:items-center">
@@ -222,12 +285,14 @@ export default function BranchLanding({ school }: { school: School }) {
               </span>
               <div>
                 <h3 className="text-lg font-bold text-ink">
-                  {school.hasDedicatedWebsite ? 'This campus has its own website' : 'A dedicated website for this campus'}
+                  {school.hasDedicatedWebsite
+                    ? `${school.shortName} also has its own website`
+                    : 'One group, everything in one place'}
                 </h3>
                 <p className="mt-1 max-w-xl text-sm text-ink-soft">
                   {school.hasDedicatedWebsite
-                    ? 'You can visit the campus website for more, while this page keeps everything within the group view.'
-                    : 'This is a branch landing page within the group website. A full, dedicated website for this campus is part of the next phase.'}
+                    ? `Explore the dedicated ${school.shortName} website for even more, or keep browsing the L. P. Savani group experience here.`
+                    : `Admissions, facilities, student life and campus contacts for ${school.shortName} all live here, within the trusted L. P. Savani Group of Schools.`}
                 </p>
               </div>
             </div>
@@ -236,8 +301,8 @@ export default function BranchLanding({ school }: { school: School }) {
                 Visit campus website
               </a>
             ) : (
-              <Link href="/proposal" className="btn-secondary shrink-0">
-                See the plan
+              <Link href="/schools" className="btn-secondary shrink-0">
+                Explore all campuses
               </Link>
             )}
           </div>
