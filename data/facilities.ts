@@ -1,122 +1,115 @@
-export type IconName =
-  | 'book'
-  | 'beaker'
-  | 'monitor'
-  | 'cpu'
-  | 'bus'
-  | 'shield'
-  | 'heart'
-  | 'utensils'
-  | 'music'
-  | 'dumbbell'
-  | 'building'
-  | 'palette';
+import { images } from './images';
+import type { IconName } from '@/components/icons';
+
+export type FacilityCategory = 'Learning' | 'Creative' | 'Active' | 'Care';
 
 export type Facility = {
   title: string;
   description: string;
   icon: IconName;
   image: string;
-  category: string;
+  category: FacilityCategory;
 };
 
-// Facility list reflects the facilities published for the L. P. Savani group
-// (smart classrooms, library, science and ICT labs, sports, activity rooms, dining).
 export const facilities: Facility[] = [
   {
-    title: 'Smart Classrooms',
-    description:
-      'Bright, airy classrooms with digital boards and teaching aids that make every lesson clear and engaging.',
-    icon: 'monitor',
-    image: '/images/facility-classroom.jpg',
-    category: 'Learning',
-  },
-  {
-    title: 'Library & Reading Room',
-    description:
-      'A calm, well-stocked library that builds a lifelong reading habit and supports independent research.',
-    icon: 'book',
-    image: '/images/facility-library.jpg',
-    category: 'Learning',
-  },
-  {
-    title: 'Science Laboratory',
-    description:
-      'Hands-on physics, chemistry and biology experiments that turn theory into real understanding.',
+    title: 'Science Laboratories',
+    description: 'Hands-on labs where curiosity turns into understanding through real experiments.',
     icon: 'beaker',
-    image: '/images/facility-science-lab.jpg',
+    image: images.facScienceLab2,
     category: 'Learning',
   },
   {
-    title: 'Computer & ICT Lab',
-    description:
-      'Modern computers and reliable connectivity that build confident, responsible digital skills.',
-    icon: 'cpu',
-    image: '/images/facility-computer-lab.jpg',
-    category: 'Learning',
-  },
-  {
-    title: 'STEM & Robotics Corner',
-    description:
-      'A maker space for coding, robotics and problem solving that encourages curiosity and invention.',
+    title: 'ICT Lab',
+    description: 'Computer labs that build digital confidence and support technology-enabled learning.',
     icon: 'monitor',
-    image: '/images/facility-robotics.jpg',
+    image: images.facIctLab,
     category: 'Learning',
   },
   {
-    title: 'Sports & Play Areas',
-    description:
-      'Indoor and outdoor spaces for athletics, team games and daily activity that keep children active.',
-    icon: 'dumbbell',
-    image: '/images/facility-sports.jpg',
-    category: 'Activity',
+    title: 'Robotics Lab',
+    description: 'A space for coding, building and problem solving with hands-on robotics.',
+    icon: 'cpu',
+    image: images.facRobotics,
+    category: 'Learning',
   },
   {
-    title: 'Art, Music & Dance Rooms',
-    description:
-      'Dedicated studios for art, music and dance where every child finds a way to express themselves.',
+    title: 'Library',
+    description: 'Quiet, well-stocked spaces that build a lasting habit of reading and research.',
+    icon: 'book',
+    image: images.facActivityRoom2,
+    category: 'Learning',
+  },
+  {
+    title: 'Art & Craft Room',
+    description: 'Room to draw, make and imagine, where creativity is given real space.',
     icon: 'palette',
-    image: '/images/facility-arts.jpg',
-    category: 'Activity',
+    image: images.facArtRoom,
+    category: 'Creative',
   },
   {
-    title: 'Transport',
-    description:
-      'A managed bus service with trained staff and planned routes for a safe daily commute.',
-    icon: 'bus',
-    image: '/images/facility-transport.jpg',
-    category: 'Care',
+    title: 'Music Room',
+    description: 'Dedicated rooms for rhythm, voice and instruments across age groups.',
+    icon: 'music',
+    image: images.facMusicRoom2,
+    category: 'Creative',
   },
   {
-    title: 'Safety & Security',
-    description:
-      'CCTV coverage, monitored entry and trained staff so children stay safe through the school day.',
-    icon: 'shield',
-    image: '/images/facility-safety.jpg',
-    category: 'Care',
+    title: 'Dance Studio',
+    description: 'Open studios for movement, expression and performance.',
+    icon: 'music',
+    image: images.facDanceRoom2,
+    category: 'Creative',
   },
   {
-    title: 'Medical Support',
-    description:
-      'A first-aid and infirmary facility with clear care procedures for everyday needs.',
-    icon: 'heart',
-    image: '/images/facility-medical.jpg',
-    category: 'Care',
-  },
-  {
-    title: 'Dining & Cafeteria',
-    description:
-      'A clean, supervised dining space that supports healthy eating habits and good routines.',
-    icon: 'utensils',
-    image: '/images/facility-dining.jpg',
-    category: 'Care',
-  },
-  {
-    title: 'Auditorium & Activity Hall',
-    description:
-      'A spacious hall for assemblies, performances and celebrations that bring the school together.',
+    title: 'Auditorium',
+    description: 'A stage for assemblies, performances and moments that build confidence.',
     icon: 'building',
-    image: '/images/facility-auditorium.jpg',
-    category: 'Activity',
+    image: images.facAuditorium,
+    category: 'Creative',
   },
+  {
+    title: 'Outdoor Sports Ground',
+    description: 'Open grounds for athletics, team games and everyday play.',
+    icon: 'dumbbell',
+    image: images.facSportsGround,
+    category: 'Active',
+  },
+  {
+    title: 'Indoor Play Area',
+    description: 'Safe indoor spaces for younger children to move and play in any weather.',
+    icon: 'dumbbell',
+    image: images.facIndoorPlay,
+    category: 'Active',
+  },
+  {
+    title: 'Dining Area',
+    description: 'Clean, comfortable spaces for meals and a calm break in the day.',
+    icon: 'utensils',
+    image: images.facDining,
+    category: 'Care',
+  },
+  {
+    title: 'Infirmary & Safety',
+    description: 'On-campus care and modern safety measures so children are looked after.',
+    icon: 'heart',
+    image: images.facInfirmary,
+    category: 'Care',
+  },
+];
+
+export const facilityCategories: { key: FacilityCategory; label: string }[] = [
+  { key: 'Learning', label: 'Learning spaces' },
+  { key: 'Creative', label: 'Creative spaces' },
+  { key: 'Active', label: 'Sports & movement' },
+  { key: 'Care', label: 'Safety & care' },
+];
+
+// Campus-experience pillars used on the Infrastructure page.
+export const experiencePillars: { title: string; body: string; icon: IconName }[] = [
+  { title: 'Learning spaces', body: 'Spacious classrooms with comfortable, purpose-built furniture that helps students stay focused.', icon: 'book' },
+  { title: 'Creative spaces', body: 'Art, music and dance rooms where expression is part of everyday school life.', icon: 'palette' },
+  { title: 'Sports and movement', body: 'Indoor and outdoor spaces that make physical activity a daily habit.', icon: 'dumbbell' },
+  { title: 'Safety and care', body: 'Infirmary support and modern safety measures across the campus.', icon: 'shield' },
+  { title: 'Technology-enabled learning', body: 'ICT and robotics labs that bring digital skills into the classroom.', icon: 'cpu' },
 ];

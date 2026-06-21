@@ -43,8 +43,8 @@ export default function TourForm() {
   if (submitted) {
     return (
       <SuccessMessage
-        title="Your campus tour request is in."
-        message="Our team will call you to confirm a convenient time and walk you through the campus, classrooms and facilities in person."
+        title="Thank you. Our admissions team will contact you shortly."
+        message="We have received your campus tour request. The team will call to confirm a convenient time to show you around in person."
       />
     );
   }

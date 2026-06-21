@@ -42,7 +42,7 @@ export default function Reveal({ children, className = '', delay = 0, as = 'div'
     <Tag
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`reveal ${shown ? 'reveal-in' : ''} ${className}`}
+      className={`reveal ${shown ? 'is-visible' : ''} ${className}`}
     >
       {children}
     </Tag>

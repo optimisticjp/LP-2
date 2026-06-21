@@ -1,20 +1,19 @@
-import type { Testimonial } from '@/data/testimonials';
+import { Icon } from '@/components/icons';
 
-export default function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
+type Props = {
+  quote: string;
+  name: string;
+  role: string;
+};
+
+export default function TestimonialCard({ quote, name, role }: Props) {
   return (
-    <figure className="card h-full p-6 sm:p-7">
-      <div className="font-display text-4xl leading-none text-gold-400" aria-hidden="true">
-        &ldquo;
-      </div>
-      <blockquote className="mt-2 text-ink-soft leading-relaxed">{testimonial.quote}</blockquote>
-      <figcaption className="mt-5 flex items-center gap-3 border-t border-brand-50 pt-4">
-        <span className="grid h-10 w-10 place-items-center rounded-full bg-brand-600 text-sm font-semibold text-white">
-          {testimonial.author.charAt(0)}
-        </span>
-        <span className="text-sm">
-          <span className="block font-semibold text-ink">{testimonial.author}</span>
-          <span className="block text-ink-muted">Parent, {testimonial.relation}</span>
-        </span>
+    <figure className="flex h-full flex-col rounded-2xl border border-cloud bg-white p-6 shadow-soft">
+      <Icon name="quote" className="h-7 w-7 text-gold-300" />
+      <blockquote className="mt-4 flex-1 text-[15px] leading-relaxed text-ink-soft">{quote}</blockquote>
+      <figcaption className="mt-5 border-t border-cloud pt-4">
+        <div className="font-semibold text-ink">{name}</div>
+        <div className="text-xs text-ink-muted">{role}</div>
       </figcaption>
     </figure>
   );

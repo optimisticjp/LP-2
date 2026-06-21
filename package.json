@@ -1,8 +1,8 @@
 {
-  "name": "lp-savani-palanpor",
+  "name": "lp-savani-group",
   "version": "1.0.0",
   "private": true,
-  "description": "L. P. Savani School, Palanpor — modern admission-focused website prototype",
+  "description": "L. P. Savani Group of Schools — central group website prototype (Next.js, static export, Cloudflare-ready)",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

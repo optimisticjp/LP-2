@@ -1,57 +1,57 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { school } from '@/data/school';
 import AnnouncementBar from '@/components/AnnouncementBar';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
+import FloatingWhatsAppButton from '@/components/FloatingWhatsAppButton';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
-
-const siteUrl = 'https://lpsavani-palanpor.example.com';
+import { brand } from '@/data/brand';
+import { site } from '@/data/site';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(site.url),
   title: {
-    default: `${school.fullName} | Admissions Open ${school.session}`,
-    template: `%s | ${school.name}, ${school.branch}`,
+    default: 'L. P. Savani Group of Schools | Best Schools in Surat',
+    template: '%s | L. P. Savani Group of Schools',
   },
-  description:
-    'L. P. Savani School, Palanpor is a nurturing CBSE-style campus in Surat with smart classrooms, science and computer labs, sports and strong values. Admissions for 2026-27 are open.',
+  description: site.description,
   keywords: [
-    'L. P. Savani School Palanpor',
-    'school in Palanpor',
-    'best school in Surat',
-    'schools near Canal Road Surat',
-    'admission 2026-27 Surat',
-    'L. P. Savani Palanpor admission',
+    'L. P. Savani Group of Schools',
+    'Best School in Surat',
+    'School in Surat',
+    'L. P. Savani admissions',
+    'School in Palanpor',
+    'School in Adajan',
+    'School in Pal',
+    'School in Vesu',
+    'School in Dabholi',
+    'School in Mota Varachha',
+    'CBSE school in Surat',
+    'GSEB school in Surat',
   ],
-  authors: [{ name: school.fullName }],
+  applicationName: site.name,
+  authors: [{ name: site.name }],
   openGraph: {
     type: 'website',
+    title: 'L. P. Savani Group of Schools | Best Schools in Surat',
+    description: site.description,
+    siteName: site.name,
+    images: [{ url: brand.assets.ogImage, width: 1200, height: 630, alt: site.name }],
     locale: 'en_IN',
-    url: siteUrl,
-    siteName: school.fullName,
-    title: `${school.fullName} | Admissions Open ${school.session}`,
-    description:
-      'A nurturing campus in Palanpor, Surat where children learn, lead and grow with confidence. Enquire about admissions for 2026-27.',
-    images: [
-      {
-        url: '/images/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: school.fullName,
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${school.fullName} | Admissions Open ${school.session}`,
-    description:
-      'A nurturing campus in Palanpor, Surat. Admissions for 2026-27 are open.',
-    images: ['/images/og-image.jpg'],
+    title: 'L. P. Savani Group of Schools',
+    description: site.description,
+    images: [brand.assets.ogImage],
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: siteUrl },
+};
+
+export const viewport = {
+  themeColor: '#004b93',
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -60,22 +60,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
+        <link href={brand.font.googleHref} rel="stylesheet" />
+        <link rel="icon" href={brand.assets.favicon} />
+        <link rel="apple-touch-icon" href={brand.assets.favicon} />
       </head>
-      <body>
+      <body className="min-h-screen pb-16 lg:pb-0">
         <a href="#main" className="skip-link">
           Skip to content
         </a>
         <AnnouncementBar />
         <Header />
-        <main id="main" className="pb-20 md:pb-0">
-          {children}
-        </main>
+        <main id="main">{children}</main>
         <Footer />
-        <WhatsAppButton />
+        <FloatingWhatsAppButton />
         <MobileStickyCTA />
       </body>
     </html>

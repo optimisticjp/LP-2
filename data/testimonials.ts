@@ -1,34 +1,25 @@
-export type Testimonial = {
-  quote: string;
-  author: string;
-  relation: string;
-};
+// Placeholder community voices. These are intentionally generic and marked for
+// the school office to replace with real, consented testimonials. No quotes are
+// attributed to specific named individuals.
+export type Voice = { quote: string; name: string; role: string };
 
-// NOTE: These are illustrative placeholder quotes written to show the layout.
-// Replace them with real, consented parent quotes before going live.
-export const testimonials: Testimonial[] = [
+export const communityVoices: Voice[] = [
   {
     quote:
-      'My daughter actually looks forward to school now. The teachers know her by name and tell us exactly how she is doing.',
-    author: 'A parent',
-    relation: 'Grade 3',
+      'This space is reserved for a parent\u2019s words about their experience with the campus and teachers. The school office can add a real testimonial here.',
+    name: 'Parent testimonial',
+    role: 'To be added by the school office',
   },
   {
     quote:
-      'What stood out on our campus visit was how calm and well-organised everything felt. We could picture our son here.',
-    author: 'A parent',
-    relation: 'Grade 1',
+      'A short reflection from an alumnus about how their years at L. P. Savani shaped them can sit here, in their own words.',
+    name: 'Alumni voice',
+    role: 'To be added by the school office',
   },
   {
     quote:
-      'There is a real balance here. Studies are taken seriously, but sport, music and confidence get attention too.',
-    author: 'A parent',
-    relation: 'Grade 6',
-  },
-  {
-    quote:
-      'The admissions team answered every question patiently and never rushed us. That trust made the decision easy.',
-    author: 'A parent',
-    relation: 'Grade 4',
+      'A note from a faculty member about the learning culture and the students they teach can be featured in this space.',
+    name: 'Faculty voice',
+    role: 'To be added by the school office',
   },
 ];

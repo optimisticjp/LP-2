@@ -1,134 +1,88 @@
-# L. P. Savani School, Palanpor — Website
+# L. P. Savani Group of Schools — Group Website
 
-A modern, mobile-friendly website for **L. P. Savani School, Palanpor** (Surat, Gujarat),
-built to attract and reassure parents and make admission enquiries easy. Built with
-Next.js, TypeScript and Tailwind CSS.
+A central website for the entire L. P. Savani Group of Schools. Parents can explore every campus, understand admissions, see facilities, compare schools, and contact the right branch from one place.
 
-The site is fully working out of the box. The text reads naturally, the layout is responsive,
-and the enquiry forms work on the front end with friendly success messages. All photos are
-branded placeholders for now — swap them for real ones when you are ready (see
-`IMAGE_ASSETS_NEEDED.md`).
+Built with Next.js (App Router), TypeScript and Tailwind CSS. It exports to a fully static site, so it can be hosted on Cloudflare Pages (or any static host) with no server.
 
 ---
 
-## Quick start
+## What's inside
 
-You need **Node.js 18.18 or newer** installed. Then, from this folder:
+**Pages**
+
+- `/` — Group home (hero, fast facts, campus finder, why us, schools, learning experience, infrastructure, gallery, parent guide, community voices, digital upgrade)
+- `/about` — About the group (story, mission, vision, values, leadership)
+- `/schools` — All schools, with a compare-campuses table
+- `/schools/adajan`, `/schools/pal`, `/schools/palanpor`, `/schools/vesu`, `/schools/dabholi`, `/schools/mota-varachha` — Branch landing pages
+- `/admissions` — Admissions journey, document checklist, enquiry form, and a campus tour section (`/admissions#tour`)
+- `/admission-process` — The step-by-step process explained
+- `/infrastructure` — Facilities by category and the campus experience
+- `/gallery` — Filterable photo gallery
+- `/achievements` — Areas of growth (with clearly marked placeholders)
+- `/contact` — Group and per-campus contact details, enquiry form and map
+- `/proposal` — Digital Transformation Proposal (for management)
+- `/privacy-policy`, `/cookie-policy` — Template legal pages
+
+---
+
+## Run it locally
+
+You need Node.js 20 or newer.
 
 ```bash
-npm install      # install dependencies (first time only)
-npm run dev      # start the site in development mode
+npm install
+npm run dev
 ```
 
-Open **http://localhost:3000** in your browser.
+Open http://localhost:3000
 
-To build the production version and run it:
+## Build the static site
 
 ```bash
-npm run build    # create the optimized build
-npm run start    # serve the production build
+npm run build
 ```
+
+This generates a static site in the `out/` folder. That folder is what gets deployed.
 
 ---
 
-## What's included
+## Where to edit content
 
-Thirteen pages, all linked through the top menu and footer:
+All content lives in the `data/` folder, separate from the design, so it is easy to update.
 
-- **Home** — banner, trust stats, why-choose-us, admissions call-out, a before/after
-  section, academics, facilities, student life, parent testimonials, gallery preview and a
-  message from the Principal.
-- **About** — story, mission and vision, values, leadership and the wider group.
-- **Admissions** — enquiry form, step-by-step process, age criteria, documents checklist,
-  fees note, prospectus download, a campus tour booking form and admission FAQs.
-- **Academics** — teaching approach, learning stages and how progress is tracked.
-- **Campus & Facilities** — classrooms, labs, sports, activity and care facilities.
-- **Student Life** — sports, arts, clubs, events and leadership.
-- **Achievements** — a ready structure with placeholders for results and highlights.
-- **Gallery** — filterable photo grid by category.
-- **Branches** — all six L. P. Savani campuses across Surat.
-- **Mandatory Disclosure** — public disclosure tables (placeholders to fill in).
-- **Contact** — address, phone, email, WhatsApp, map and an enquiry form.
-- **404 page** — a friendly "page not found" with links back into the site.
+- `data/site.ts` — Group name, tagline, **admissions year**, default contact number and email, and the stats shown on the homepage.
+- `data/schools.ts` — Every campus: name, location, board, address, phone numbers, email, admission link, highlights, facilities and gallery. **This is the main file for branch information.**
+- `data/facilities.ts` — The infrastructure list (title, description, image, category).
+- `data/gallery.ts` — Gallery photos and their categories and captions.
+- `data/faqs.ts` — Admission and general FAQs.
+- `data/contact.ts` — Office hours and contact note (branch details come from `schools.ts`).
+- `data/proposal.ts` — All wording for the `/proposal` page.
+- `data/navigation.ts` — Header, mega menu and footer links.
+- `data/images.ts` — Central list of image URLs (see below).
+- `data/testimonials.ts` — Community voices placeholders to replace with real testimonials.
 
-Shared across every page: an announcement bar, a sticky header with dropdown menus and a
-mobile menu, a floating WhatsApp button, a mobile call/WhatsApp/apply bar, and a full footer.
+### Update the admissions year
 
----
+Open `data/site.ts` and change `admissionsYear` (for example `'2026-27'`). It updates everywhere automatically.
 
-## How it's organised
+### Replace or self-host images
 
-```
-app/                 Each folder is a page (uses the Next.js App Router)
-  layout.tsx         Shared shell: fonts, header, footer, floating buttons, SEO defaults
-  page.tsx           Home page
-  globals.css        Colours, fonts and shared styles
-components/          Reusable building blocks (cards, forms, header, footer, etc.)
-data/                The content you will edit most often (see below)
-public/images/       All images (currently placeholders)
-public/              Logo and the placeholder prospectus PDF
-```
-
-## Editing the content
-
-Most text and details live in plain files under **`data/`**, so you can update them without
-touching the design:
-
-- **`data/school.ts`** — name, address, phone, email, WhatsApp number, office hours, the
-  Principal's name, the live admission form link and the map. **Start here.**
-- **`data/navigation.ts`** — the top menu and footer links.
-- **`data/branches.ts`** — the list of campuses and their links.
-- **`data/facilities.ts`** — facility cards (title, description, image).
-- **`data/faqs.ts`** — the admission and general FAQs.
-- **`data/testimonials.ts`** — parent quotes. These are **placeholders**; replace them with
-  real, consented quotes before going live.
-- **`data/gallery.ts`** — gallery photos and captions.
-
-Page-specific text (headings and paragraphs) lives inside each page file in `app/`.
-
-## Replacing the images
-
-Every image is a placeholder. See **`IMAGE_ASSETS_NEEDED.md`** for the full list, the
-recommended size for each, and what each photo should show. To replace one, drop your photo
-into `public/images/` using the **same file name**. No code changes needed.
-
-## Before you publish — a checklist
-
-- [ ] Update all details in `data/school.ts` and confirm the phone, email and address.
-- [ ] Replace placeholder photos in `public/images/` with real ones.
-- [ ] Replace the testimonials in `data/testimonials.ts` with real parent quotes.
-- [ ] Fill in the real values on the **Mandatory Disclosure** page (`app/mandatory-disclosure/page.tsx`).
-- [ ] Add real results and highlights on the **Achievements** page.
-- [ ] Replace `public/prospectus-placeholder.pdf` with the official prospectus.
-- [ ] Update the affiliation/board details, which are marked "To be updated".
-- [ ] Set the real website address in `app/layout.tsx` (the `siteUrl` value) for correct
-      social sharing links.
-- [ ] Add the real social media links in `data/school.ts`.
-
-## A note on the enquiry forms
-
-The enquiry and campus-tour forms work on the front end and show a success message, but they
-do **not** send data anywhere yet. When you are ready, connect them to your email, a Google
-Sheet, or your existing admission portal. The school's live admission portal link is already
-saved in `data/school.ts` (`admissionFormUrl`) and can be linked or embedded.
-
-## Putting it online
-
-The easiest option is **Vercel** (the company behind Next.js):
-
-1. Push this project to a GitHub repository.
-2. Go to vercel.com, import the repository and click deploy. No special settings are needed.
-3. Add your custom domain in the Vercel dashboard.
-
-It also runs on any host that supports Node.js, using `npm run build` then `npm run start`.
-
-## Facts and accuracy
-
-Factual details (address, phone, the Principal's name, branch list and group figures) are
-based on the public L. P. Savani websites. All other text was written fresh for this site.
-Anything not yet confirmed is shown as a clear placeholder. Please review every page with the
-school office and update the placeholders before publishing.
+Images currently load from the school's existing media URLs, listed in `data/images.ts`. To host them on your own site instead, see `IMAGE_ASSETS_NEEDED.md`.
 
 ---
 
-Built with Next.js 14, React 18, TypeScript and Tailwind CSS 3.
+## Deploy to Cloudflare Pages
+
+- **Build command:** `npm run build`
+- **Build output directory:** `out`
+- **Environment variable:** `NODE_VERSION` = `20`
+
+Full steps are in `DEPLOY.md`.
+
+---
+
+## Notes
+
+- Forms are front-end only. On submit they show a success message; no data is sent anywhere. Connecting them to email or a CRM is a later phase.
+- Some sections are intentional placeholders for the school to confirm before publishing: achievement results, fee and age criteria, the legal pages, and lighter detail for the Dabholi and Mota Varachha campuses.
+- For how to present this to management, see `MANAGEMENT_NOTES.md`.

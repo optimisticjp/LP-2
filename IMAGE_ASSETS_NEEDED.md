@@ -1,81 +1,105 @@
-# Image assets needed
+# Image assets
 
-Every image in this project is currently a **branded placeholder** (a blue gradient
-with a label). The site is fully working, but to make it look real you should replace
-each file in `public/images/` with an actual photo, keeping the **same file name**.
+This site uses real photographs and graphics from the L. P. Savani group's existing media. They are referenced by URL, so the build works immediately and no image is broken.
 
-A few tips for good results:
-
-- Use bright, well-lit, in-focus photos.
-- Match the shape (aspect ratio) roughly so nothing looks stretched. Each file lists a
-  recommended size below.
-- Get consent before using photos of children, and follow your school's media policy.
-- Keep file sizes reasonable (ideally under ~400 KB each) so pages load fast. You can
-  compress with any free tool before adding them.
-- Keep the same `.jpg` extension and the exact same file name.
-
-To replace an image: delete the placeholder in `public/images/`, then drop your photo in
-with the **same name**. No code changes are needed.
+There are two ways to handle images going forward. Either is fine.
 
 ---
 
-## Key pages and branding
+## Option A — keep loading from the current media URLs (default)
 
-| File name | Recommended size | What it should show |
-| --- | --- | --- |
-| `hero.jpg` | 1600 x 1000 | Wide, welcoming shot of the campus or happy students. Used as the home page banner. |
-| `og-image.jpg` | 1200 x 630 | Social share image (WhatsApp, Facebook). School building or logo-friendly shot. |
-| `admissions.jpg` | 1200 x 900 | Parents and a child visiting, or a warm front-office / entrance shot. |
-| `academics.jpg` | 1200 x 900 | A lesson in progress, students engaged in class. |
-| `principal.jpg` | 800 x 1000 (portrait) | A clear portrait photo of the Principal, Dr. Kshitij Patel. |
-| `campus-overview.jpg` | 1200 x 900 | The school building or main campus view. |
-| `about-campus.jpg` | 1200 x 900 | Campus exterior, walkway, or entrance. |
-| `student-life.jpg` | 1200 x 900 | Students taking part in an activity or working together. |
-
-## Facilities (recommended size 900 x 600)
-
-| File name | What it should show |
-| --- | --- |
-| `facility-classroom.jpg` | A smart classroom with a digital board. |
-| `facility-library.jpg` | The library / reading room. |
-| `facility-science-lab.jpg` | The science laboratory. |
-| `facility-computer-lab.jpg` | The computer / ICT lab. |
-| `facility-robotics.jpg` | STEM / robotics corner or maker space. |
-| `facility-sports.jpg` | Sports ground or children playing a sport. |
-| `facility-arts.jpg` | Art, music or dance room. |
-| `facility-transport.jpg` | A school bus or the transport fleet. |
-| `facility-safety.jpg` | Security gate, CCTV, or staff at entry. |
-| `facility-medical.jpg` | First-aid / infirmary room. |
-| `facility-dining.jpg` | Dining hall or cafeteria. |
-| `facility-auditorium.jpg` | Auditorium or main activity hall. |
-
-## Gallery (recommended size 900 x 700)
-
-| File name | What it should show |
-| --- | --- |
-| `gallery-campus-1.jpg` | Open courtyard or campus grounds. |
-| `gallery-campus-2.jpg` | Assembly ground or another campus angle. |
-| `gallery-classroom-1.jpg` | Teacher with young learners. |
-| `gallery-classroom-2.jpg` | Group activity or discussion in class. |
-| `gallery-event-1.jpg` | Annual day performance on stage. |
-| `gallery-event-2.jpg` | A festival celebration. |
-| `gallery-event-3.jpg` | Independence Day / Republic Day event. |
-| `gallery-sports-1.jpg` | Sports day on the field. |
-| `gallery-sports-2.jpg` | Indoor games or fitness. |
-| `gallery-activity-1.jpg` | Hands-on craft session. |
-| `gallery-activity-2.jpg` | A club or creative activity. |
-| `gallery-lab-1.jpg` | Students working at a lab bench. |
+Nothing to do. The images already load from the group's media storage. This is the quickest path and is good for the prototype and for launch. The trade-off is that the site depends on those URLs staying available.
 
 ---
 
-## Other files to replace
+## Option B — host the images on your own site (recommended long term)
 
-- **`public/prospectus-placeholder.pdf`** — replace with the school's official prospectus.
-  If you change the file name, update `prospectusUrl` in `data/school.ts`.
-- **`public/logo.svg`** and **`app/icon.svg`** — simple text-based logo marks. Replace with
-  the official school logo if you have a vector (SVG) version.
+This removes the external dependency and can load faster from your own CDN.
 
-## Where the captions and labels come from
+1. Download each image from the URLs listed below.
+2. Put them in `public/images/` (keep the file names).
+3. In `data/images.ts`, change each URL to a local path, for example:
 
-Image captions and alt text live in `data/gallery.ts` and `data/facilities.ts`. If you add
-photos that show something different, update the captions there so they match.
+   ```ts
+   // before
+   heroPrimary: `${A}/ARUN_4726_3e55bc28bb.JPG`,
+   // after
+   heroPrimary: '/images/ARUN_4726_3e55bc28bb.JPG',
+   ```
+
+4. Run `npm run build` again.
+
+Because `data/images.ts` is the single place every image is referenced from, you only change that one file.
+
+---
+
+## Brand assets
+
+- **Logo:** the header and footer use a clean text wordmark so the brand stays legible on white and dark backgrounds. The official logo files are the first two URLs below (`logoLight`, `logoGroup` in `data/images.ts`) if you want to swap one in.
+- **Favicon:** loaded from the group's favicon URL, with an `app/icon.svg` fallback.
+- **Social / OG image:** set in `app/layout.tsx`.
+
+---
+
+## The image list (57 files)
+
+These are the image URLs currently in use:
+
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/logo_1_ddd7c0bbd1.svg
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/logo_e6167e6bc2.svg
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/favicon_savani_c9d0d362bf.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/medium_lpsavani_pictures_12_fe48eb0ba2.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/ARUN_4726_3e55bc28bb.JPG
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/ARUN_4699_0aa5b762dd.JPG
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/THE_STUDIO_SCHOOL_0ea48435e2.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/THE_STUDIO_SCHOOL_2_6555237ab9.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/THE_STUDIO_SCHOOL_5_9c8858c80a.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/THE_STUDIO_SCHOOL_1_7342b39a36.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lp_savani_banner_8_f1d57f261d.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/14_8cac6de7c6.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/12_56b259d0f2.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/11_d83801a7ba.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/13_59e77a4a8d.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/8_c3caada86d.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/7_d559937d98.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/10_e172a32927.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/9_c109fe833c.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/5_b7dc20b1d3.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/4_553e8c037b.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/Untitled_design_16_d836f12577.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lps_gos_image_1_06df30211b.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lps_gos_image_2_80da205f41.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lps_gos_image_3_6624038779.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lps_gos_image_5_387b5e4935.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lps_gos_image_6_da4de9a649.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lps_gos_image_7_e3f6799aaa.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lps_gos_image_8_52b975ffba.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lps_gos_image_9_88d02c90d4.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/adajan_11249a68ba.jpg
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lpsavani_pictures_21_69ff4e88d0.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/LPSA_PIC_f544d06162.jpg
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lpsavani_pictures_6_5087d142d1.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lpsavani_pictures1_37fedaa2bc.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lpsavani_pictures_13_595dd8fba2.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lpsavani_pictures_14_9f2ae0a2f1.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lpsavani_pictures_20_b5b50b4c8c.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lpsavani_pictures_21_9886578859.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/lpsavani_pictures_22_de166f6b3b.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/ARUN_4590_d2248f7162.JPG
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/ARUN_4604_282e090383.JPG
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/ARUN_4632_3fe5db3977.JPG
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/ARUN_4670_1e0f4534c1.JPG
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/ARUN_4764_9204c1e9b6.JPG
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/ARUN_4787_784e72456a.JPG
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/ARUN_4844_b406893467.JPG
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/ARUN_5032_4903f4c06f.JPG
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/79_years_of_independence_a_nation_s_pride_9415fde23c.jpg
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/Cyber_Crime_4ef5c1c370.jpg
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/9_d9563406bb.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/11_00f44134f4.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/5_ea2fad5691.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/12_d729722b8f.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/4_03288ccc86.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/10_d1dd52e9e3.png
+- https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in/8_81df05a214.png
+

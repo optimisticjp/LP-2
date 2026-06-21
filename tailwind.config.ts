@@ -1,87 +1,80 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: [
-    './app/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './data/**/*.{ts,tsx}',
-  ],
+  content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './data/**/*.{ts,tsx}'],
   theme: {
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: '1.25rem',
-        sm: '1.5rem',
-        lg: '2rem',
-      },
-      screens: {
-        '2xl': '1200px',
-      },
-    },
     extend: {
       colors: {
-        // Deep navy ink — primary text and dark surfaces
-        ink: {
-          DEFAULT: '#13233f',
-          soft: '#33415c',
-          muted: '#5a6b87',
-        },
-        // Rich royal blue — the lead brand colour
         brand: {
-          50: '#eef4fc',
-          100: '#d8e6f8',
-          200: '#aecbf0',
-          300: '#7ba8e4',
-          400: '#467fd2',
-          500: '#2360b8',
-          600: '#1b4d97',
-          700: '#173e7c',
-          800: '#163a72',
-          900: '#13233f',
+          50: '#eef5fc',
+          100: '#d6e7f7',
+          200: '#aecfee',
+          300: '#7fb1e3',
+          400: '#4d8dd4',
+          500: '#2a6cbb',
+          600: '#004b93',
+          700: '#013c77',
+          800: '#06325f',
+          900: '#0a2747',
         },
-        // Warm gold — accents, underlines, highlights
+        ink: {
+          DEFAULT: '#0a2440',
+          soft: '#1d3a5c',
+          muted: '#5b7290',
+        },
         gold: {
-          50: '#fbf6e9',
-          100: '#f6ead0',
-          200: '#ecd29c',
-          300: '#e3bd6e',
+          50: '#fbf6ea',
+          100: '#f5e8c8',
+          200: '#ecd293',
+          300: '#e0b95c',
           400: '#d8a23a',
-          500: '#c5872a',
-          600: '#a36a21',
+          500: '#c1882a',
+          600: '#9c6b22',
         },
-        // Muted emerald — used sparingly for trust / success
         leaf: {
-          50: '#eef6f1',
-          100: '#d4ebdd',
-          400: '#3a8d68',
-          500: '#2f7d5b',
-          600: '#24654a',
+          50: '#eef8f1',
+          100: '#d2eeda',
+          400: '#4aa872',
+          500: '#3a9061',
+          600: '#2c714c',
         },
-        cream: '#f8f6f1',
-        mist: '#f3f7fd',
+        slatey: {
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+        },
+        mist: '#f4f7fb',
+        cloud: '#eef2f8',
       },
       fontFamily: {
-        display: ['var(--font-display)', 'Georgia', 'serif'],
-        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sans)', 'Montserrat', 'system-ui', 'sans-serif'],
+        display: ['var(--font-sans)', 'Montserrat', 'system-ui', 'sans-serif'],
       },
-      boxShadow: {
-        soft: '0 1px 2px rgba(19,35,63,0.04), 0 8px 24px rgba(19,35,63,0.06)',
-        card: '0 2px 6px rgba(19,35,63,0.05), 0 18px 40px rgba(19,35,63,0.08)',
-        lift: '0 10px 24px rgba(19,35,63,0.10), 0 24px 60px rgba(19,35,63,0.14)',
+      maxWidth: {
+        container: '1240px',
       },
       borderRadius: {
-        xl: '0.9rem',
-        '2xl': '1.25rem',
-        '3xl': '1.75rem',
+        btn: '16px',
+        'btn-sm': '4px',
       },
-      backgroundImage: {
-        'hero-grid':
-          'linear-gradient(rgba(19,35,63,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(19,35,63,0.04) 1px, transparent 1px)',
+      boxShadow: {
+        soft: '0 2px 10px -2px rgba(10, 36, 64, 0.10)',
+        card: '0 10px 30px -12px rgba(10, 36, 64, 0.16)',
+        lift: '0 22px 48px -20px rgba(10, 36, 64, 0.28)',
+        ring: '0 0 0 1px rgba(10, 36, 64, 0.06)',
+      },
+      letterSpacing: {
+        tightest: '-0.04em',
       },
       keyframes: {
         'fade-up': {
-          '0%': { opacity: '0', transform: 'translateY(14px)' },
+          '0%': { opacity: '0', transform: 'translateY(16px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
         marquee: {
           '0%': { transform: 'translateX(0)' },
@@ -89,7 +82,8 @@ const config: Config = {
         },
       },
       animation: {
-        'fade-up': 'fade-up 0.6s ease both',
+        'fade-up': 'fade-up 0.6s ease-out both',
+        'fade-in': 'fade-in 0.8s ease-out both',
         marquee: 'marquee 26s linear infinite',
       },
     },

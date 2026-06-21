@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import type { Faq } from '@/data/faqs';
+import type { FAQ } from '@/data/faqs';
 
-export default function FAQAccordion({ items }: { items: Faq[] }) {
+export default function FAQAccordion({ items }: { items: FAQ[] }) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (

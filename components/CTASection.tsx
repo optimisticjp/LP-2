@@ -1,62 +1,56 @@
 import Link from 'next/link';
-import { school, whatsappLink } from '@/data/school';
+import Container from '@/components/Container';
+import { Icon } from '@/components/icons';
+import { site, whatsappLink } from '@/data/site';
 
 type Props = {
   title?: string;
   subtitle?: string;
-  variant?: 'blue' | 'soft';
+  className?: string;
 };
 
+// Reusable closing call-to-action band used across pages.
 export default function CTASection({
-  title = 'Give your child a confident start',
-  subtitle = 'Admissions for 2026-27 are open. Enquire today, book a campus tour, or talk to our team directly.',
-  variant = 'blue',
+  title = 'Ready to find the right campus for your child?',
+  subtitle = 'Explore every L. P. Savani campus, understand admissions and book a visit. We are here to help you take the next step.',
+  className = '',
 }: Props) {
-  const isBlue = variant === 'blue';
-
   return (
-    <section className={isBlue ? 'bg-brand-900' : 'bg-mist'}>
-      <div className="container py-14 sm:py-16">
-        <div
-          className={`relative overflow-hidden rounded-3xl px-6 py-12 sm:px-12 sm:py-14 ${
-            isBlue
-              ? 'bg-gradient-to-br from-brand-700 via-brand-800 to-brand-900 text-white'
-              : 'border border-brand-100 bg-white text-ink shadow-soft'
-          }`}
-        >
-          {isBlue ? (
-            <div
-              className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-gold-400/20 blur-2xl"
-              aria-hidden="true"
-            />
-          ) : null}
-          <div className="relative max-w-2xl">
-            <h2 className={`text-3xl sm:text-4xl ${isBlue ? 'text-white' : 'text-ink'}`}>{title}</h2>
-            <p className={`mt-4 text-base leading-relaxed ${isBlue ? 'text-brand-100' : 'text-ink-soft'}`}>
-              {subtitle}
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+    <section className={`bg-white ${className}`}>
+      <Container>
+        <div className="relative overflow-hidden rounded-3xl bg-brand-700 px-6 py-12 text-white sm:px-12 sm:py-16">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-brand-600/60 blur-2xl"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-gold-400/20 blur-2xl"
+          />
+          <div className="relative mx-auto max-w-2xl text-center">
+            <span className="eyebrow justify-center text-gold-300">Admissions {site.admissionsYear}</span>
+            <h2 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl">{title}</h2>
+            <p className="mx-auto mt-4 max-w-xl text-brand-100">{subtitle}</p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link href="/admissions" className="btn-gold">
-                Apply now
+                Apply Now
               </Link>
-              <Link href="/admissions#campus-tour" className={isBlue ? 'btn-ghost' : 'btn-outline'}>
-                Book a campus tour
+              <Link href="/admissions#tour" className="btn-white">
+                Book a Campus Tour
               </Link>
-              <a href={`tel:${school.contact.phoneTel}`} className={isBlue ? 'btn-ghost' : 'btn-outline'}>
-                Call admissions
-              </a>
               <a
-                href={whatsappLink()}
+                href={whatsappLink('Hi, I would like to talk to the L. P. Savani admissions team.')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-whatsapp"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-white/90 hover:text-white"
               >
-                WhatsApp
+                <Icon name="whatsapp" className="h-4 w-4" />
+                Talk to Admissions
               </a>
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

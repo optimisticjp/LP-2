@@ -3,109 +3,108 @@
 @tailwind utilities;
 
 :root {
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    @apply bg-white text-ink font-sans antialiased;
-    text-rendering: optimizeLegibility;
+    @apply bg-white text-ink antialiased;
+    font-family: var(--font-sans);
   }
 
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5 {
     @apply font-display text-ink;
-    letter-spacing: -0.01em;
-  }
-
-  /* Visible keyboard focus everywhere */
-  a:focus-visible,
-  button:focus-visible,
-  input:focus-visible,
-  select:focus-visible,
-  textarea:focus-visible,
-  [tabindex]:focus-visible {
-    @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-white rounded-md;
+    letter-spacing: -0.02em;
   }
 
   ::selection {
-    background: rgba(216, 162, 58, 0.28);
+    background-color: #004b93;
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 3px solid #4d8dd4;
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }
 
 @layer components {
-  .container-tight {
-    @apply container max-w-5xl;
+  .container-x {
+    @apply mx-auto w-full max-w-container px-5 sm:px-6 lg:px-8;
   }
 
-  /* Buttons */
-  .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold
-           transition-all duration-200 focus-visible:outline-none focus-visible:ring-2
-           focus-visible:ring-offset-2 focus-visible:ring-offset-white;
-  }
-  .btn-primary {
-    @apply btn bg-brand-600 text-white shadow-soft hover:bg-brand-700 hover:shadow-lift focus-visible:ring-brand-500;
-  }
-  .btn-gold {
-    @apply btn bg-gold-400 text-ink shadow-soft hover:bg-gold-300 hover:shadow-lift focus-visible:ring-gold-400;
-  }
-  .btn-outline {
-    @apply btn border border-brand-200 bg-white text-brand-700 hover:border-brand-400 hover:bg-brand-50 focus-visible:ring-brand-500;
-  }
-  .btn-ghost {
-    @apply btn bg-white/10 text-white ring-1 ring-white/30 hover:bg-white/20 focus-visible:ring-white;
-  }
-  .btn-whatsapp {
-    @apply btn bg-leaf-500 text-white shadow-soft hover:bg-leaf-600 focus-visible:ring-leaf-500;
-  }
-
-  /* Eyebrow label used above section headings */
+  /* Eyebrow / section label */
   .eyebrow {
     @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600;
   }
-  .eyebrow::before {
-    content: '';
-    @apply h-px w-7 bg-gold-400;
+
+  /* Buttons — radii follow the brand spec (primary 16px, secondary 4px) */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-semibold leading-none transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn rounded-btn bg-brand-600 px-6 py-3.5 text-sm text-white shadow-soft hover:bg-brand-700 hover:shadow-card active:translate-y-px;
+  }
+
+  .btn-secondary {
+    @apply btn rounded-btn-sm border border-brand-600 bg-white px-6 py-3.5 text-sm text-brand-600 hover:bg-brand-50;
+  }
+
+  .btn-gold {
+    @apply btn rounded-btn bg-gold-400 px-6 py-3.5 text-sm text-ink shadow-soft hover:bg-gold-500 hover:text-white active:translate-y-px;
+  }
+
+  .btn-ghost {
+    @apply btn rounded-btn-sm px-5 py-3 text-sm text-brand-700 hover:bg-brand-50;
+  }
+
+  .btn-whatsapp {
+    @apply btn rounded-btn bg-[#1faf54] px-6 py-3.5 text-sm text-white shadow-soft hover:bg-[#1a9648] active:translate-y-px;
+  }
+
+  .btn-white {
+    @apply btn rounded-btn bg-white px-6 py-3.5 text-sm text-brand-700 shadow-soft hover:bg-brand-50 active:translate-y-px;
   }
 
   .card {
-    @apply rounded-2xl border border-brand-50 bg-white shadow-soft transition-all duration-300;
+    @apply rounded-2xl border border-cloud bg-white shadow-soft;
   }
+
   .card-hover {
-    @apply hover:-translate-y-1 hover:shadow-card;
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-card;
   }
 
-  .prose-school p {
-    @apply text-ink-soft leading-relaxed;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  /* Pill / badge */
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
   }
 
-  /* gold underline accent for headings */
-  .underline-gold {
-    background-image: linear-gradient(transparent 62%, rgba(216, 162, 58, 0.45) 62%);
-    background-repeat: no-repeat;
-  }
-
-  /* Scroll reveal (paired with components/Reveal.tsx) */
+  /* Scroll reveal — animates in unless reduced motion is requested */
   .reveal {
     opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     will-change: opacity, transform;
   }
-  .reveal-in {
+
+  .reveal.is-visible {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);
+  }
+
+  .skip-link {
+    @apply sr-only;
+  }
+  .skip-link:focus {
+    @apply not-sr-only fixed left-4 top-4 z-[100] rounded-btn-sm bg-brand-600 px-4 py-2 text-sm font-semibold text-white;
   }
 }
 
@@ -118,31 +117,18 @@
     transform: none !important;
     transition: none !important;
   }
-  .animate-marquee,
-  .animate-fade-up {
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-marquee {
     animation: none !important;
   }
 }
 
-/* Skip link for keyboard and screen-reader users */
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: 0;
-  z-index: 100;
-  background: theme('colors.brand.700');
-  color: #fff;
-  padding: 0.6rem 1rem;
-  border-radius: 0 0 0.6rem 0;
-  font-size: 0.875rem;
-  font-weight: 600;
+/* Hide scrollbar for horizontal scroll strips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-.skip-link:focus {
-  left: 0;
-}
-
-/* Respect reduced motion for scroll smoothing handled above */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

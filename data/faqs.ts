@@ -1,47 +1,47 @@
-export type Faq = { q: string; a: string };
+export type FAQ = { q: string; a: string };
 
-export const admissionFaqs: Faq[] = [
-  {
-    q: 'When do admissions open for the 2026-27 session?',
-    a: 'Admission enquiries for 2026-27 are open now. Seats in each grade are limited, so we encourage parents to enquire early and book a campus tour.',
-  },
+export const admissionFaqs: FAQ[] = [
   {
     q: 'How do I start the admission process?',
-    a: 'Share an enquiry through the form on this page or call the admissions office. Our counsellor will guide you through the steps, eligibility and a campus visit.',
+    a: 'Begin with an enquiry. You can submit the enquiry form on this site, choose your preferred campus, and the admission team will get in touch to guide you through the next steps.',
   },
   {
-    q: 'What is the right age for each grade?',
-    a: 'Age criteria follow standard guidelines and are confirmed at the time of enquiry. The admissions office will tell you the correct grade for your child based on date of birth.',
+    q: 'Which campus and board should I choose?',
+    a: 'It depends on where you live and the board you prefer. Adajan and Pal offer both GSEB and CBSE streams, Vesu follows CBSE, and Palanpor, Dabholi and Mota Varachha follow GSEB. The admission team is happy to help you compare.',
   },
   {
-    q: 'Which documents are required at admission?',
-    a: 'Typically the birth certificate, recent photographs, the previous school report or transfer certificate where applicable, and address and identity proof. The office shares the full checklist after your enquiry.',
+    q: 'What documents are needed for admission?',
+    a: 'Commonly required documents include the student\u2019s birth certificate, recent photographs of the student and parents, Aadhaar copies, and previous report cards and transfer certificate for students joining from Grade 1 onwards. The exact list is shared by the campus office.',
   },
   {
-    q: 'Can I visit the campus before deciding?',
-    a: 'Yes. We recommend it. Book a campus tour and meet our team, see the classrooms, labs and facilities, and ask every question that matters to you.',
+    q: 'Is there an entrance assessment?',
+    a: 'Depending on the grade, students may take a simple assessment so teachers can understand their current level and place them well. It is designed to be a comfortable conversation, not a high-pressure test.',
   },
   {
-    q: 'Is transport available?',
-    a: 'A managed school bus service is available on selected routes with trained staff. Please confirm availability for your area with the admissions office.',
+    q: 'Can I visit the campus before applying?',
+    a: 'Yes. We encourage families to visit. Use the campus tour request on this site and the office will arrange a convenient time to show you around and answer your questions.',
   },
   {
-    q: 'What is the fee structure?',
-    a: 'Fee details for 2026-27 are shared by the school office on request. Contact admissions for the current structure and any applicable terms.',
+    q: 'Are admissions open for 2026-27?',
+    a: 'Yes, enquiries for the 2026-27 session are open across campuses. Seats vary by grade and campus, so it is best to enquire early.',
   },
 ];
 
-export const generalFaqs: Faq[] = [
+export const generalFaqs: FAQ[] = [
   {
-    q: 'Where is the school located?',
-    a: 'L. P. Savani School is on Canal Road, near Palanpur Jakat Naka, Palanpor, Surat - 394510.',
+    q: 'How many campuses does L. P. Savani have?',
+    a: 'The group runs six campuses across Surat: Adajan, Pal, Palanpor, Vesu, Dabholi and Mota Varachha, each part of the same education group.',
   },
   {
-    q: 'Is this part of the larger L. P. Savani group?',
-    a: 'Yes. Palanpor is one of six L. P. Savani campuses across Surat, backed by more than two decades of experience in education.',
+    q: 'Are the facilities the same at every campus?',
+    a: 'Core facilities are shared across the group, but specific spaces vary by campus. For example, Adajan has a swimming pool and robotics lab. Please contact the campus office for branch-specific details.',
   },
   {
-    q: 'How can I reach the admissions team quickly?',
-    a: 'Call or message us on WhatsApp during office hours, Monday to Saturday, 9:00 AM to 4:00 PM, and our counsellor will assist you.',
+    q: 'How can I reach a specific campus?',
+    a: 'Each campus has its own address and phone number, listed on the Contact page and on each school\u2019s page. You can also send an enquiry and the right campus will respond.',
+  },
+  {
+    q: 'Does each school have its own website?',
+    a: 'Some campuses have dedicated websites, and others are presented here as part of the group site. This central website is designed to bring everything together in one place.',
   },
 ];

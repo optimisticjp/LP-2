@@ -1,112 +1,100 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Container from '@/components/Container';
-import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
+import Badge from '@/components/Badge';
 import CTASection from '@/components/CTASection';
-import { Icon } from '@/components/icons';
+import { Icon, type IconName } from '@/components/icons';
+import { schools } from '@/data/schools';
 
 export const metadata: Metadata = {
   title: 'Achievements',
   description:
-    'Academic results, sports, arts and competition highlights from L. P. Savani School, Palanpor. Detailed results for 2025-26 will be published here soon.',
+    'A celebration of growth across L. P. Savani Group of Schools: academics, sports, arts and culture, and student leadership. Detailed results and recognitions are updated by the school office.',
+  alternates: { canonical: '/achievements' },
 };
 
-const categories = [
-  { icon: 'book' as const, title: 'Academics', text: 'Board results, toppers and consistent year-on-year performance.' },
-  { icon: 'dumbbell' as const, title: 'Sports', text: 'Wins and participation across athletics, team games and tournaments.' },
-  { icon: 'music' as const, title: 'Arts & culture', text: 'Recognition in music, dance, art and cultural competitions.' },
-  { icon: 'cpu' as const, title: 'Olympiads & STEM', text: 'Achievements in olympiads, quizzes and science and tech contests.' },
-];
-
-const comingSoon = [
-  { tag: 'Academics', title: 'Board Results 2025-26', note: 'Results coming soon' },
-  { tag: 'Academics', title: 'Subject Toppers 2025-26', note: 'To be updated' },
-  { tag: 'Sports', title: 'Sports Day Highlights', note: 'Photos and results coming soon' },
-  { tag: 'Culture', title: 'Annual Day Highlights', note: 'Coming soon' },
-  { tag: 'Olympiads', title: 'Olympiad Achievers', note: 'To be updated' },
-  { tag: 'Competitions', title: 'Inter-School Wins', note: 'Coming soon' },
+const areas: { title: string; body: string; icon: IconName }[] = [
+  { title: 'Academic growth', body: 'A steady focus on strong academic foundations and a love of learning across grades.', icon: 'book' },
+  { title: 'Sports participation', body: 'Students take part in athletics and team games, supported by dedicated sports spaces.', icon: 'dumbbell' },
+  { title: 'Arts and culture', body: 'Music, dance and art are part of school life, with regular opportunities to perform.', icon: 'palette' },
+  { title: 'Student leadership', body: 'Students are encouraged to lead, organise and take responsibility within the school.', icon: 'users' },
 ];
 
 export default function AchievementsPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-brand-900 text-white">
-        <div className="absolute inset-0">
-          <Image src="/images/gallery-event-3.jpg" alt="Celebrating achievements at L. P. Savani School, Palanpor" fill priority sizes="100vw" className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-900/95 via-brand-900/85 to-brand-800/60" />
-        </div>
-        <Container className="relative py-16 sm:py-20">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-gold-300">Achievements</p>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl">
-            Celebrating effort, growth and success
+      <section className="bg-white">
+        <Container className="py-14 sm:py-18">
+          <Badge tone="brand" icon="star">
+            Achievements
+          </Badge>
+          <h1 className="mt-5 max-w-3xl text-4xl font-extrabold leading-tight text-ink sm:text-5xl">
+            Celebrating growth, in and beyond the classroom
           </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-brand-100">
-            We are proud of what our students achieve, in the classroom and well beyond it.
-            Detailed results and highlights for {''}
-            <span className="font-semibold text-white">2025-26</span> will be published here soon.
+          <p className="mt-4 max-w-2xl text-ink-soft sm:text-lg">
+            Across our campuses, students grow in academics, sports, arts and leadership. This page is
+            ready for the school office to add specific results and recognitions.
           </p>
         </Container>
       </section>
 
-      {/* Categories */}
-      <section className="bg-white">
-        <Container className="py-16 sm:py-20">
-          <SectionHeading
-            align="center"
-            eyebrow="What we celebrate"
-            title="Achievement across the board"
-            subtitle="Success at our school is not just about marks. We recognise growth in every area of school life."
-          />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {categories.map((c, i) => (
-              <Reveal key={c.title} delay={i * 80}>
-                <div className="card card-hover h-full p-6 text-center">
-                  <span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-brand-50 text-brand-600">
-                    <Icon name={c.icon} className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-4 text-lg text-ink">{c.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">{c.text}</p>
-                </div>
-              </Reveal>
+      <section className="bg-mist py-16">
+        <Container>
+          <SectionHeading eyebrow="Areas of growth" title="Where our students shine" className="mb-10" />
+          <div className="grid gap-4 sm:grid-cols-2">
+            {areas.map((a) => (
+              <div key={a.title} className="card h-full p-6">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-600">
+                  <Icon name={a.icon} className="h-6 w-6" />
+                </span>
+                <h3 className="mt-4 text-lg font-bold text-ink">{a.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{a.body}</p>
+              </div>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* Coming soon grid */}
-      <section className="bg-cream">
-        <Container className="py-16 sm:py-20">
-          <SectionHeading
-            eyebrow="Updating soon"
-            title="Results and highlights, on the way"
-            subtitle="We are putting together verified results and photos for the latest session. Check back shortly, or ask the office for the most recent figures."
-          />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {comingSoon.map((item, i) => (
-              <Reveal key={item.title} delay={(i % 3) * 80}>
-                <div className="relative h-full overflow-hidden rounded-2xl border border-dashed border-brand-200 bg-white p-6">
-                  <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">{item.tag}</span>
-                  <h3 className="mt-4 text-lg text-ink">{item.title}</h3>
-                  <p className="mt-2 inline-flex items-center gap-2 text-sm text-ink-muted">
-                    <span className="h-2 w-2 rounded-full bg-gold-400" />
-                    {item.note}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-          <div className="mt-8 rounded-2xl border border-brand-100 bg-white p-6 text-center shadow-soft">
-            <p className="text-sm leading-relaxed text-ink-soft">
-              This page is set up and ready. Replace the placeholders with real, verified results,
-              names and photos before sharing the site publicly.
+      {/* Results and recognitions placeholder */}
+      <section className="bg-white py-16">
+        <Container>
+          <div className="rounded-3xl border border-dashed border-brand-200 bg-brand-50/40 p-8 text-center sm:p-12">
+            <span className="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-white text-brand-600 shadow-soft">
+              <Icon name="star" className="h-6 w-6" />
+            </span>
+            <h2 className="mt-4 text-2xl font-bold text-ink">Results and recognitions</h2>
+            <p className="mx-auto mt-2 max-w-xl text-ink-soft">
+              Board results, competition wins, and other recognitions can be featured here.
             </p>
+            <p className="mt-3 text-sm font-semibold text-brand-600">To be updated by school office</p>
           </div>
         </Container>
       </section>
 
-      <CTASection />
+      {/* Branch-wise placeholder */}
+      <section className="bg-mist py-16">
+        <Container>
+          <SectionHeading
+            eyebrow="Branch-wise achievements"
+            title="Highlights by campus"
+            subtitle="Each campus can showcase its own milestones here. Content to be added by the school office."
+            className="mb-8"
+          />
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {schools.map((s) => (
+              <div key={s.slug} className="flex items-center justify-between rounded-2xl border border-cloud bg-white p-5 shadow-soft">
+                <div>
+                  <div className="font-semibold text-ink">{s.shortName}</div>
+                  <div className="text-xs text-ink-muted">{s.board}</div>
+                </div>
+                <span className="pill bg-mist text-ink-muted">Coming soon</span>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <CTASection className="pb-20" />
     </>
   );
 }

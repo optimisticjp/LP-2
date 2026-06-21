@@ -44,8 +44,8 @@ export default function AdmissionForm({ compact = false }: { compact?: boolean }
   if (submitted) {
     return (
       <SuccessMessage
-        title="Thank you. Your enquiry is in."
-        message="Our admission counsellor will contact you shortly to guide you through the next steps and help you book a campus visit."
+        title="Thank you. Our admissions team will contact you shortly."
+        message="We have received your enquiry. The right campus team will reach out to guide you through the next steps and help you book a visit."
       />
     );
   }
