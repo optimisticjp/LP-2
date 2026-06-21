@@ -11,6 +11,7 @@ import FacilityCard from '@/components/FacilityCard';
 import GalleryGrid from '@/components/GalleryGrid';
 import TestimonialCard from '@/components/TestimonialCard';
 import CTASection from '@/components/CTASection';
+import CampusMap from '@/components/CampusMap';
 import HeroCampusPicker from '@/components/HeroCampusPicker';
 import { Icon, type IconName } from '@/components/icons';
 import { schools } from '@/data/schools';
@@ -162,13 +163,16 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Which campus is right for your child?"
             title="Find your campus"
-            subtitle="Pick a campus to see its board, location and what makes it special. Every campus shares the same L. P. Savani commitment to learning and care."
+            subtitle="Browse every campus by location or board, or use the quick helper to find the right fit. Every campus shares the same L. P. Savani commitment to learning and care."
             align="center"
             className="mb-10"
           />
           <CampusSwitcher />
         </Container>
       </section>
+
+      {/* 3b. Campuses across Surat — map-style overview */}
+      <CampusMap />
 
       {/* 4. Why L. P. Savani */}
       <section className="bg-mist section-y">
