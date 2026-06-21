@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-sans: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-}
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -15,8 +11,7 @@
   }
 
   body {
-    @apply bg-white text-ink antialiased;
-    font-family: var(--font-sans);
+    @apply bg-white text-ink antialiased font-sans;
   }
 
   h1, h2, h3, h4, h5 {
@@ -25,12 +20,12 @@
   }
 
   ::selection {
-    background-color: #004b93;
+    background-color: #14305c;
     color: #fff;
   }
 
   :focus-visible {
-    outline: 3px solid #4d8dd4;
+    outline: 3px solid #3a5176;
     outline-offset: 2px;
     border-radius: 2px;
   }
@@ -48,7 +43,7 @@
 
   /* Eyebrow / section label */
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600;
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-gold-700;
   }
 
   /* Buttons — radii follow the brand spec (primary 16px, secondary 4px) */

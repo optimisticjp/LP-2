@@ -5,14 +5,14 @@ import { images } from './images';
 // (inline styles, meta theme-color) stay consistent.
 export const brand = {
   colors: {
-    primary: '#004b93',
-    accent: '#004b93',
-    gold: '#d8a23a',
+    primary: '#14305c',
+    accent: '#e11b22',
+    gold: '#f4c430',
     green: '#3a9061',
     background: '#ffffff',
-    text: '#0a2440',
-    secondary: '#9ca3af',
-    link: '#374151',
+    text: '#14305c',
+    secondary: '#8b94a6',
+    link: '#11284d',
   },
   font: {
     family: 'Montserrat',

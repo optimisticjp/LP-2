@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Fraunces, Inter } from 'next/font/google';
 import './globals.css';
 import AnnouncementBar from '@/components/AnnouncementBar';
 import Header from '@/components/Header';
@@ -7,6 +8,22 @@ import FloatingWhatsAppButton from '@/components/FloatingWhatsAppButton';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import { brand } from '@/data/brand';
 import { site } from '@/data/site';
+
+// Body / UI typeface.
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+// Display / heading typeface — variable Fraunces with optical sizing on.
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  axes: ['opsz'],
+  variable: '--font-fraunces',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -49,18 +66,15 @@ export const metadata: Metadata = {
 };
 
 export const viewport = {
-  themeColor: '#004b93',
+  themeColor: '#14305c',
   width: 'device-width',
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href={brand.font.googleHref} rel="stylesheet" />
         <link rel="icon" href={brand.assets.favicon} />
         <link rel="apple-touch-icon" href={brand.assets.favicon} />
       </head>
