@@ -51,11 +51,16 @@ export default function BranchSelector() {
           </p>
         </div>
 
-        <div className="flex flex-col justify-center gap-2 sm:items-end">
-          <a href={school.admissionLink} target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto">
+        <div className="flex flex-col justify-center gap-2.5">
+          <a
+            href={school.admissionLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary w-full"
+          >
             Start enquiry for {school.shortName}
           </a>
-          <Link href={`/schools/${school.slug}`} className="btn-secondary w-full sm:w-auto">
+          <Link href={`/schools/${school.slug}`} className="btn-secondary w-full">
             View campus page
           </Link>
         </div>

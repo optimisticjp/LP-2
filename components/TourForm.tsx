@@ -45,6 +45,7 @@ export default function TourForm() {
       <SuccessMessage
         title="Thank you. Our admissions team will contact you shortly."
         message="We have received your campus tour request. The team will call to confirm a convenient time to show you around in person."
+        note="This is a prototype. In the final version, enquiries can go to email, WhatsApp, CRM, or dashboard."
       />
     );
   }

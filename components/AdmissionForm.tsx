@@ -46,6 +46,7 @@ export default function AdmissionForm({ compact = false }: { compact?: boolean }
       <SuccessMessage
         title="Thank you. Our admissions team will contact you shortly."
         message="We have received your enquiry. The right campus team will reach out to guide you through the next steps and help you book a visit."
+        note="This is a prototype. In the final version, enquiries can go to email, WhatsApp, CRM, or dashboard."
       />
     );
   }

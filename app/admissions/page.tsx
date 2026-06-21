@@ -88,7 +88,7 @@ export default function AdmissionsPage() {
                 {checklist.map((c) => (
                   <li key={c} className="flex items-start gap-3 rounded-2xl border border-cloud bg-white p-4 shadow-soft">
                     <Icon name="check" className="mt-0.5 h-5 w-5 shrink-0 text-leaf-500" />
-                    <span className="text-sm font-medium text-ink">{c}</span>
+                    <span className="text-[15px] font-medium leading-relaxed text-ink">{c}</span>
                   </li>
                 ))}
               </ul>
@@ -115,7 +115,7 @@ export default function AdmissionsPage() {
                       <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-50 text-xs font-bold text-brand-600">
                         {i + 1}
                       </span>
-                      <span className="text-sm text-ink-soft">{d}</span>
+                      <span className="text-[15px] leading-relaxed text-ink-soft">{d}</span>
                     </li>
                   ))}
                 </ul>
@@ -128,7 +128,7 @@ export default function AdmissionsPage() {
                   <Icon name="users" className="h-5 w-5" />
                 </span>
                 <h3 className="mt-4 font-bold text-ink">Age criteria</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
+                <p className="mt-1.5 text-[15px] leading-relaxed text-ink-soft">
                   Age requirements follow each board&rsquo;s norms and vary slightly by grade. Share your
                   child&rsquo;s date of birth with your enquiry and the admissions team will confirm the
                   right grade and the exact age criteria for your chosen campus.
@@ -139,7 +139,7 @@ export default function AdmissionsPage() {
                   <Icon name="book" className="h-5 w-5" />
                 </span>
                 <h3 className="mt-4 font-bold text-ink">Fee details</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
+                <p className="mt-1.5 text-[15px] leading-relaxed text-ink-soft">
                   The fee structure varies by campus, board and grade. Send an enquiry and the campus
                   office will share the complete, up-to-date fee details and the available payment
                   options for your selected grade.

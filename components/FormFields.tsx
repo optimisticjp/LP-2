@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 
 const baseField =
-  'w-full rounded-xl border border-brand-100 bg-white px-4 py-3 text-base text-ink placeholder:text-ink-muted shadow-sm transition-colors focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-200';
+  'w-full rounded-xl border border-brand-100 bg-white px-4 py-3.5 text-base text-ink placeholder:text-ink-muted shadow-sm transition-colors focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-200';
 
 type FieldWrapProps = {
   label: string;
@@ -49,7 +49,15 @@ export function Select({
   );
 }
 
-export function SuccessMessage({ title, message }: { title: string; message: string }) {
+export function SuccessMessage({
+  title,
+  message,
+  note,
+}: {
+  title: string;
+  message: string;
+  note?: string;
+}) {
   return (
     <div className="rounded-2xl border border-leaf-100 bg-leaf-50 p-8 text-center">
       <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-leaf-500 text-white">
@@ -59,6 +67,11 @@ export function SuccessMessage({ title, message }: { title: string; message: str
       </div>
       <h3 className="mt-4 text-xl text-ink">{title}</h3>
       <p className="mt-2 text-sm leading-relaxed text-ink-soft">{message}</p>
+      {note ? (
+        <p className="mx-auto mt-5 max-w-sm border-t border-leaf-100 pt-4 text-xs leading-relaxed text-ink-muted">
+          {note}
+        </p>
+      ) : null}
     </div>
   );
 }
