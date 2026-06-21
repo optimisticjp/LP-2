@@ -109,11 +109,17 @@ export default function HomePage() {
           <div className="animate-fade-up [animation-delay:150ms]">
             <div className="relative">
               {/* Main image */}
-              <Img
-                src={images.heroPrimary}
-                alt="Students engaged in learning at an L. P. Savani campus in Surat"
-                className="aspect-[4/5] w-full rounded-3xl object-cover shadow-lift sm:aspect-[4/3] lg:aspect-[5/6]"
-              />
+              <div className="relative overflow-hidden rounded-3xl shadow-lift ring-1 ring-ink/10">
+                <Img
+                  src={images.heroPrimary}
+                  alt="Students engaged in learning at an L. P. Savani campus in Surat"
+                  className="aspect-[4/5] w-full object-cover sm:aspect-[4/3] lg:aspect-[5/6]"
+                />
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-deepNavy/35 via-deepNavy/5 to-transparent"
+                />
+              </div>
 
               {/* Secondary offset image — overlapping bottom-right corner, hidden on mobile */}
               <div className="absolute -bottom-5 -right-4 hidden rounded-2xl ring-4 ring-white shadow-card sm:block">
@@ -150,8 +156,12 @@ export default function HomePage() {
       <section className="bg-white pb-6">
         <Container>
           <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-            {site.stats.map((s) => (
-              <StatCard key={s.label} value={s.value} label={s.label} />
+            {site.stats.map((s, i) => (
+              <StatCard
+                key={s.label}
+                value={s.value}
+                label={['Students', 'Faculty', 'Years', 'Campuses'][i] ?? s.label}
+              />
             ))}
           </div>
         </Container>
@@ -322,11 +332,11 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Community voices"
             title="What our community says"
-            subtitle="These spaces are ready for real words from parents, alumni and faculty, added by the school office."
+            subtitle="Parents, students and teachers on what makes L. P. Savani feel like family."
             align="center"
             className="mb-10"
           />
-          <div className="grid gap-4 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {communityVoices.map((v) => (
               <TestimonialCard key={v.role + v.name} quote={v.quote} name={v.name} role={v.role} />
             ))}
@@ -337,12 +347,12 @@ export default function HomePage() {
       {/* 11. Digital upgrade */}
       <section className="bg-white section-y">
         <Container>
-          <div className="grid items-center gap-6 rounded-3xl border border-cloud bg-gradient-to-br from-brand-50 to-white p-8 sm:p-12 lg:grid-cols-2 lg:gap-10">
+          <div className="flex flex-col gap-8 rounded-3xl border border-cloud bg-gradient-to-br from-brand-50 to-white p-6 sm:p-10 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
             <div>
               <Badge tone="gold" icon="sparkle">
                 A better digital experience
               </Badge>
-              <h2 className="mt-4 text-3xl font-bold leading-tight text-ink">
+              <h2 className="mt-4 text-[1.7rem] font-bold leading-snug text-ink sm:text-3xl">
                 One place for every parent
               </h2>
               <p className="mt-4 text-ink-soft">
