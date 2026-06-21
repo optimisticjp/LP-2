@@ -172,7 +172,10 @@ export default function CampusSwitcher() {
 
         {/* Guidance — "Not sure?" helper */}
         <aside className="border-t border-cloud bg-mist p-5 sm:p-6 lg:border-l lg:border-t-0">
-          <h3 className="text-lg font-bold text-ink">Not sure which branch is right?</h3>
+          <span className="inline-grid h-10 w-10 place-items-center rounded-xl bg-brand-50 text-brand-600">
+            <Icon name="sparkle" className="h-5 w-5" />
+          </span>
+          <h3 className="mt-3 text-lg font-bold text-ink">Not sure which branch is right?</h3>
           <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
             Answer three quick questions and we&rsquo;ll point you to a campus. Nothing is sent anywhere.
           </p>
@@ -218,18 +221,23 @@ export default function CampusSwitcher() {
           </button>
 
           {result ? (
-            <div className="mt-4 rounded-2xl border border-cloud bg-white p-4 shadow-soft">
-              <p className="text-sm font-semibold text-ink">{result.message}</p>
+            <div className="mt-4 rounded-2xl border border-brand-100 bg-white p-4 shadow-soft">
+              <p className="flex items-start gap-2 text-sm font-semibold text-ink">
+                <Icon
+                  name={result.school ? 'check' : 'sparkle'}
+                  className="mt-0.5 h-4 w-4 shrink-0 text-leaf-500"
+                />
+                {result.message}
+              </p>
               {result.school ? (
-                <div className="mt-3 rounded-xl bg-mist p-3">
-                  <div className="font-bold text-ink">{result.school.shortName}</div>
-                  <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-ink-muted">
-                    <span className="inline-flex items-center gap-1">
-                      <Icon name="pin" className="h-3.5 w-3.5 text-brand-500" />
-                      {result.school.location}
-                    </span>
-                    <span className="text-brand-300">|</span>
-                    <span className="font-medium text-brand-600">{result.school.board}</span>
+                <div className="mt-3 rounded-xl border border-cloud bg-brand-50/60 p-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-bold text-ink">{result.school.shortName}</span>
+                    <span className="pill bg-white text-brand-700">{result.school.board}</span>
+                  </div>
+                  <p className="mt-1.5 flex items-center gap-1.5 text-xs text-ink-muted">
+                    <Icon name="pin" className="h-3.5 w-3.5 text-brand-500" />
+                    {result.school.location}
                   </p>
                   <div className="mt-3 flex items-center gap-2">
                     <Link href={`/schools/${result.school.slug}`} className="btn-primary flex-1">

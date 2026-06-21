@@ -48,7 +48,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
         <Link
           href="/schools"
           onClick={onNavigate}
-          className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700"
+          className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 transition-colors hover:text-brand-700"
         >
           View all schools and compare campuses
           <Icon name="arrow" className="h-4 w-4" />
@@ -126,7 +126,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={onNavigate}
-              className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white/90 hover:text-white"
+              className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white/90 transition-colors hover:text-white"
             >
               <Icon name="whatsapp" className="h-4 w-4" />
               Chat on WhatsApp

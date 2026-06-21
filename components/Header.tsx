@@ -120,7 +120,7 @@ export default function Header() {
       </div>
 
       <div
-        className={`absolute inset-x-0 top-full hidden lg:block ${megaOpen ? '' : 'pointer-events-none'}`}
+        className={`absolute inset-x-0 top-full z-40 hidden lg:block ${megaOpen ? '' : 'pointer-events-none'}`}
         onMouseEnter={openMega}
         onMouseLeave={scheduleCloseMega}
       >
@@ -129,7 +129,7 @@ export default function Header() {
             megaOpen ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0'
           }`}
         >
-          <div className="mt-2 rounded-2xl border border-cloud bg-white p-5 shadow-lift">
+          <div className="mt-2 max-h-[80vh] overflow-y-auto rounded-2xl border border-cloud bg-white p-5 shadow-lift">
             <MegaMenu onNavigate={() => setMegaOpen(false)} />
           </div>
         </div>
