@@ -36,7 +36,7 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
       />
 
       <div
-        className={`absolute inset-y-0 right-0 flex w-[86%] max-w-sm flex-col bg-white shadow-lift transition-transform duration-300 ${
+        className={`absolute right-0 top-0 flex h-[100dvh] w-[86%] max-w-sm flex-col bg-white shadow-lift transition-transform duration-300 ${
           open ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -52,7 +52,7 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
           </button>
         </div>
 
-        <nav className="flex-1 overflow-y-auto px-3 py-3" aria-label="Mobile">
+        <nav className="min-h-0 flex-1 overflow-y-auto px-3 py-3" aria-label="Mobile">
           <ul className="flex flex-col">
             {mainNav
               .filter((l) => l.label !== 'Schools')
@@ -61,7 +61,7 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
                   <Link
                     href={l.href}
                     onClick={onClose}
-                    className="block rounded-xl px-4 py-3 text-[15px] font-semibold text-ink hover:bg-mist"
+                    className="block rounded-xl px-4 py-2.5 text-[15px] font-semibold text-ink hover:bg-mist"
                   >
                     {l.label}
                   </Link>

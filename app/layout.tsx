@@ -78,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href={brand.assets.favicon} />
         <link rel="apple-touch-icon" href={brand.assets.logoEmblem} />
       </head>
-      <body className="min-h-screen pb-16 lg:pb-0">
+      <body className="min-h-screen pb-[calc(4.75rem+env(safe-area-inset-bottom))] lg:pb-0">
         <a href="#main" className="skip-link">
           Skip to content
         </a>
