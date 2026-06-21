@@ -36,7 +36,7 @@ export default function SchoolsPage() {
       </section>
 
       {/* Grid */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-y">
         <Container>
           <SectionHeading
             eyebrow="All campuses"
@@ -53,7 +53,7 @@ export default function SchoolsPage() {
       </section>
 
       {/* Compare campuses */}
-      <section className="bg-mist py-16">
+      <section className="bg-mist section-y">
         <Container>
           <SectionHeading
             eyebrow="Compare campuses"
@@ -114,7 +114,7 @@ export default function SchoolsPage() {
       </section>
 
       {/* Need help choosing */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-y">
         <Container>
           <div className="grid items-center gap-8 rounded-3xl bg-brand-700 p-8 text-white sm:p-12 lg:grid-cols-[1.6fr_1fr]">
             <div>

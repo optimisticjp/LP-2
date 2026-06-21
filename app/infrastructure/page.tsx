@@ -39,7 +39,7 @@ export default function InfrastructurePage() {
       {facilityCategories.map((cat, idx) => {
         const items = facilities.filter((f) => f.category === cat.key);
         return (
-          <section key={cat.key} className={idx % 2 === 0 ? 'bg-mist py-14' : 'bg-white py-14'}>
+          <section key={cat.key} className={idx % 2 === 0 ? 'bg-mist section-y' : 'bg-white section-y'}>
             <Container>
               <SectionHeading eyebrow={`0${idx + 1}`} title={cat.label} className="mb-8" />
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -53,7 +53,7 @@ export default function InfrastructurePage() {
       })}
 
       {/* Campus experience pillars */}
-      <section className="bg-ink py-16 text-white">
+      <section className="bg-ink section-y text-white">
         <Container>
           <SectionHeading
             light

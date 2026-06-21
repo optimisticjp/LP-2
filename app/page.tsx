@@ -157,7 +157,7 @@ export default function HomePage() {
       </section>
 
       {/* 3. Campus finder */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-y">
         <Container>
           <SectionHeading
             eyebrow="Which campus is right for your child?"
@@ -171,7 +171,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. Why L. P. Savani */}
-      <section className="bg-mist py-16">
+      <section className="bg-mist section-y">
         <Container>
           <SectionHeading
             eyebrow="Why L. P. Savani"
@@ -196,7 +196,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. Explore Our Schools */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-y">
         <Container>
           <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
             <SectionHeading
@@ -217,7 +217,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. Learning experience */}
-      <section className="relative overflow-hidden bg-ink py-16 text-white">
+      <section className="relative overflow-hidden bg-ink section-y text-white">
         <Container>
           <SectionHeading
             light
@@ -241,7 +241,7 @@ export default function HomePage() {
       </section>
 
       {/* 7. Infrastructure preview */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-y">
         <Container>
           <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
             <SectionHeading
@@ -262,7 +262,7 @@ export default function HomePage() {
       </section>
 
       {/* 8. Gallery preview */}
-      <section className="bg-mist py-16">
+      <section className="bg-mist section-y">
         <Container>
           <SectionHeading
             eyebrow="Gallery"
@@ -281,7 +281,7 @@ export default function HomePage() {
       </section>
 
       {/* 9. Parent decision guide */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-y">
         <Container>
           <SectionHeading
             eyebrow="For parents"
@@ -313,7 +313,7 @@ export default function HomePage() {
       </section>
 
       {/* 10. Community voices */}
-      <section className="bg-mist py-16">
+      <section className="bg-mist section-y">
         <Container>
           <SectionHeading
             eyebrow="Community voices"
@@ -331,9 +331,9 @@ export default function HomePage() {
       </section>
 
       {/* 11. Digital upgrade */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-y">
         <Container>
-          <div className="grid items-center gap-10 rounded-3xl border border-cloud bg-gradient-to-br from-brand-50 to-white p-8 sm:p-12 lg:grid-cols-2">
+          <div className="grid items-center gap-6 rounded-3xl border border-cloud bg-gradient-to-br from-brand-50 to-white p-8 sm:p-12 lg:grid-cols-2 lg:gap-10">
             <div>
               <Badge tone="gold" icon="sparkle">
                 A better digital experience
@@ -347,10 +347,10 @@ export default function HomePage() {
                 website built for mobile.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/proposal" className="btn-primary">
+                <Link href="/proposal" className="btn-primary w-full sm:w-auto">
                   See the vision
                 </Link>
-                <Link href="/about" className="btn-secondary">
+                <Link href="/about" className="btn-secondary w-full sm:w-auto">
                   About the group
                 </Link>
               </div>

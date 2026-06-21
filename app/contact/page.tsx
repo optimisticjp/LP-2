@@ -42,14 +42,14 @@ export default function ContactPage() {
       </section>
 
       {/* Branch selector */}
-      <section className="bg-white py-14">
+      <section className="bg-white pt-8 pb-14 sm:pb-20 lg:pb-24">
         <Container>
           <BranchSelector />
         </Container>
       </section>
 
       {/* Contact cards */}
-      <section className="bg-mist py-16">
+      <section className="bg-mist section-y">
         <Container>
           <SectionHeading eyebrow="All campuses" title="Campus contacts" className="mb-10" />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -101,7 +101,7 @@ export default function ContactPage() {
       </section>
 
       {/* Form + map */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-y">
         <Container>
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
@@ -132,8 +132,8 @@ export default function ContactPage() {
       {/* WhatsApp CTA */}
       <section className="bg-mist pb-20 pt-4">
         <Container>
-          <div className="flex flex-col items-center justify-between gap-5 rounded-3xl bg-[#1faf54] p-8 text-white sm:flex-row sm:p-10">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-col items-center justify-between gap-5 rounded-3xl bg-[#1faf54] p-8 text-center text-white sm:flex-row sm:p-10 sm:text-left">
+            <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
               <Icon name="whatsapp" className="h-10 w-10" />
               <div>
                 <h3 className="text-xl font-bold">Message us on WhatsApp</h3>
@@ -144,7 +144,7 @@ export default function ContactPage() {
               href={whatsappLink('Hi, I have a question about L. P. Savani Group of Schools.')}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-white shrink-0"
+              className="btn-white w-full shrink-0 sm:w-auto"
             >
               Start a chat
             </a>

@@ -30,7 +30,7 @@ export default function GalleryPage() {
         </Container>
       </section>
 
-      <section className="bg-mist py-12 sm:py-16">
+      <section className="bg-mist section-y">
         <Container>
           <SectionHeading eyebrow="Browse" title="Photo gallery" className="mb-8" />
           <GalleryGrid />

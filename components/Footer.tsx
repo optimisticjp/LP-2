@@ -44,16 +44,19 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 min-[420px]:grid-cols-2 lg:grid-cols-4">
             {footerColumns.map((col) => (
               <div key={col.title}>
                 <h3 className="text-xs font-bold uppercase tracking-[0.16em] text-gold-300">
                   {col.title}
                 </h3>
-                <ul className="mt-4 flex flex-col gap-2.5">
+                <ul className="mt-4 flex flex-col gap-1">
                   {col.links.map((l) => (
                     <li key={l.href}>
-                      <Link href={l.href} className="text-sm text-white/70 transition-colors hover:text-white">
+                      <Link
+                        href={l.href}
+                        className="block py-1.5 text-sm leading-relaxed text-white/70 transition-colors hover:text-white"
+                      >
                         {l.label}
                       </Link>
                     </li>

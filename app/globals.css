@@ -20,7 +20,7 @@
   }
 
   h1, h2, h3, h4, h5 {
-    @apply font-display text-ink;
+    @apply font-display;
     letter-spacing: -0.02em;
   }
 
@@ -38,7 +38,12 @@
 
 @layer components {
   .container-x {
-    @apply mx-auto w-full max-w-container px-5 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-container px-5 sm:px-6 md:px-8;
+  }
+
+  /* Standard vertical rhythm for top-level page section wrappers */
+  .section-y {
+    @apply py-14 sm:py-20 lg:py-24;
   }
 
   /* Eyebrow / section label */
@@ -52,27 +57,27 @@
   }
 
   .btn-primary {
-    @apply btn rounded-btn bg-brand-600 px-6 py-3.5 text-sm text-white shadow-soft hover:bg-brand-700 hover:shadow-card active:translate-y-px;
+    @apply btn rounded-btn bg-brand-600 px-6 py-3.5 text-[15px] text-white shadow-soft hover:bg-brand-700 hover:shadow-card active:translate-y-px;
   }
 
   .btn-secondary {
-    @apply btn rounded-btn-sm border border-brand-600 bg-white px-6 py-3.5 text-sm text-brand-600 hover:bg-brand-50;
+    @apply btn rounded-btn-sm border border-brand-600 bg-white px-6 py-3.5 text-[15px] text-brand-600 hover:bg-brand-50;
   }
 
   .btn-gold {
-    @apply btn rounded-btn bg-gold-400 px-6 py-3.5 text-sm text-ink shadow-soft hover:bg-gold-500 hover:text-white active:translate-y-px;
+    @apply btn rounded-btn bg-gold-400 px-6 py-3.5 text-[15px] text-ink shadow-soft hover:bg-gold-500 hover:text-white active:translate-y-px;
   }
 
   .btn-ghost {
-    @apply btn rounded-btn-sm px-5 py-3 text-sm text-brand-700 hover:bg-brand-50;
+    @apply btn rounded-btn-sm px-5 py-3 text-[15px] text-brand-700 hover:bg-brand-50;
   }
 
   .btn-whatsapp {
-    @apply btn rounded-btn bg-[#1faf54] px-6 py-3.5 text-sm text-white shadow-soft hover:bg-[#1a9648] active:translate-y-px;
+    @apply btn rounded-btn bg-[#1faf54] px-6 py-3.5 text-[15px] text-white shadow-soft hover:bg-[#1a9648] active:translate-y-px;
   }
 
   .btn-white {
-    @apply btn rounded-btn bg-white px-6 py-3.5 text-sm text-brand-700 shadow-soft hover:bg-brand-50 active:translate-y-px;
+    @apply btn rounded-btn bg-white px-6 py-3.5 text-[15px] text-brand-700 shadow-soft hover:bg-brand-50 active:translate-y-px;
   }
 
   .card {

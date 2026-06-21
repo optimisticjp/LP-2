@@ -49,7 +49,7 @@ export default function BranchLanding({ school }: { school: School }) {
       </section>
 
       {/* Overview */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-y">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr]">
             <div>
@@ -104,7 +104,7 @@ export default function BranchLanding({ school }: { school: School }) {
       </section>
 
       {/* Why this campus */}
-      <section className="bg-mist py-16">
+      <section className="bg-mist section-y">
         <Container>
           <SectionHeading
             eyebrow="Why this campus"
@@ -123,7 +123,7 @@ export default function BranchLanding({ school }: { school: School }) {
       </section>
 
       {/* Facilities */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-y">
         <Container>
           <SectionHeading
             eyebrow="Facilities"
@@ -146,7 +146,7 @@ export default function BranchLanding({ school }: { school: School }) {
       </section>
 
       {/* Gallery strip / student life */}
-      <section className="bg-mist py-16">
+      <section className="bg-mist section-y">
         <Container>
           <SectionHeading eyebrow="Student life" title="A look around the campus" className="mb-8" />
           <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
@@ -158,7 +158,7 @@ export default function BranchLanding({ school }: { school: School }) {
       </section>
 
       {/* Contact block */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-y">
         <Container>
           <div className="grid gap-8 lg:grid-cols-2">
             <div>

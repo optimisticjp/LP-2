@@ -90,7 +90,7 @@ export default function AboutPage() {
       </section>
 
       {/* Story */}
-      <section className="bg-mist py-16">
+      <section className="bg-mist section-y">
         <Container>
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
@@ -122,7 +122,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission / Vision / Values */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-y">
         <Container>
           <SectionHeading
             eyebrow="Educational philosophy"
@@ -146,7 +146,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership */}
-      <section className="bg-mist py-16">
+      <section className="bg-mist section-y">
         <Container>
           <SectionHeading
             eyebrow="Leadership"

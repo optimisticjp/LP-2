@@ -61,7 +61,7 @@ export default function ProposalPage() {
       </section>
 
       <div className="bg-white">
-        <Container className="max-w-4xl space-y-16 py-16">
+        <Container className="max-w-4xl space-y-16 section-y">
           {/* 1. Opportunity */}
           <ProposalSection index={1} eyebrow="Why now" title={opportunity.title}>
             <div className="space-y-4 text-ink-soft">

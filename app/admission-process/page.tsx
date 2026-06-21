@@ -54,7 +54,7 @@ export default function AdmissionProcessPage() {
         </Container>
       </section>
 
-      <section className="bg-mist py-16">
+      <section className="bg-mist section-y">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
@@ -69,7 +69,7 @@ export default function AdmissionProcessPage() {
         </Container>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="bg-white section-y">
         <Container>
           <SectionHeading eyebrow="What to expect" title="We keep it simple" align="center" className="mb-10" />
           <div className="grid gap-4 sm:grid-cols-3">

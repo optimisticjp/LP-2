@@ -53,7 +53,7 @@ export default function AdmissionsPage() {
     <>
       {/* Hero */}
       <section className="bg-brand-700 text-white">
-        <Container className="py-16 sm:py-20">
+        <Container className="py-16 sm:py-20 lg:py-28">
           <Badge tone="white" icon="check">
             Admissions open for {site.admissionsYear}
           </Badge>
@@ -68,14 +68,14 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Branch selector */}
-      <section className="bg-white py-14">
+      <section className="bg-white pt-8 pb-14 sm:pb-20 lg:pb-24">
         <Container>
           <BranchSelector />
         </Container>
       </section>
 
       {/* Process + checklist */}
-      <section className="bg-mist py-16">
+      <section className="bg-mist section-y">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
@@ -98,7 +98,7 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Documents + criteria/fees */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-y">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
             <div>
@@ -149,7 +149,7 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Admission enquiry form */}
-      <section className="bg-mist py-16">
+      <section className="bg-mist section-y">
         <Container size="tight">
           <SectionHeading
             eyebrow="Admission enquiry"
@@ -165,7 +165,7 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Book campus tour */}
-      <section id="tour" className="scroll-mt-28 bg-white py-16">
+      <section id="tour" className="scroll-mt-28 bg-white section-y">
         <Container size="tight">
           <div className="grid items-start gap-8 lg:grid-cols-2">
             <div>
@@ -193,7 +193,7 @@ export default function AdmissionsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-mist py-16">
+      <section className="bg-mist section-y">
         <Container size="tight">
           <SectionHeading eyebrow="Questions" title="Admission FAQs" align="center" className="mb-8" />
           <FAQAccordion items={admissionFaqs} />
@@ -203,8 +203,8 @@ export default function AdmissionsPage() {
       {/* WhatsApp CTA */}
       <section className="bg-white pb-20 pt-4">
         <Container>
-          <div className="flex flex-col items-center justify-between gap-5 rounded-3xl bg-[#1faf54] p-8 text-white sm:flex-row sm:p-10">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-col items-center justify-between gap-5 rounded-3xl bg-[#1faf54] p-8 text-center text-white sm:flex-row sm:p-10 sm:text-left">
+            <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
               <Icon name="whatsapp" className="h-10 w-10" />
               <div>
                 <h3 className="text-xl font-bold">Prefer to chat?</h3>
@@ -215,7 +215,7 @@ export default function AdmissionsPage() {
               href={whatsappLink('Hi, I would like to enquire about admissions at L. P. Savani for ' + site.admissionsYear + '.')}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-white shrink-0"
+              className="btn-white w-full shrink-0 sm:w-auto"
             >
               Chat on WhatsApp
             </a>

@@ -38,7 +38,7 @@ export default function AchievementsPage() {
         </Container>
       </section>
 
-      <section className="bg-mist py-16">
+      <section className="bg-mist section-y">
         <Container>
           <SectionHeading eyebrow="Areas of growth" title="Where our students shine" className="mb-10" />
           <div className="grid gap-4 sm:grid-cols-2">
@@ -56,7 +56,7 @@ export default function AchievementsPage() {
       </section>
 
       {/* Results and recognitions placeholder */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-y">
         <Container>
           <div className="rounded-3xl border border-dashed border-brand-200 bg-brand-50/40 p-8 text-center sm:p-12">
             <span className="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-white text-brand-600 shadow-soft">
@@ -72,7 +72,7 @@ export default function AchievementsPage() {
       </section>
 
       {/* Branch-wise placeholder */}
-      <section className="bg-mist py-16">
+      <section className="bg-mist section-y">
         <Container>
           <SectionHeading
             eyebrow="Branch-wise achievements"
