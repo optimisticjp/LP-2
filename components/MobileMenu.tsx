@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import Logo from '@/components/Logo';
+import Img from '@/components/Img';
 import { Icon } from '@/components/icons';
 import { mainNav, megaSchools } from '@/data/navigation';
 import { site, whatsappLink } from '@/data/site';
@@ -89,13 +90,28 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
                     <Link
                       href={s.href}
                       onClick={onClose}
-                      className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm text-ink-soft hover:bg-white"
+                      className="flex items-center gap-3 rounded-lg p-2 hover:bg-white"
                     >
-                      <span>
-                        <span className="font-medium text-ink">{s.name}</span>
-                        <span className="ml-2 text-xs text-ink-muted">{s.board}</span>
+                      <Img
+                        src={s.thumb}
+                        alt={`${s.fullName} campus`}
+                        className="h-11 w-12 shrink-0 rounded-md object-cover"
+                      />
+                      <span className="min-w-0 flex-1">
+                        <span className="flex items-center gap-1.5">
+                          <span className="truncate text-sm font-semibold text-ink">{s.name}</span>
+                          {s.flagship ? (
+                            <span className="pill bg-gold-50 text-[10px] text-gold-600">Flagship</span>
+                          ) : null}
+                        </span>
+                        <span className="mt-0.5 flex items-center gap-1.5 text-xs text-ink-muted">
+                          <Icon name="pin" className="h-3 w-3 shrink-0" />
+                          <span className="truncate">{s.location}</span>
+                          <span className="text-brand-300">|</span>
+                          <span className="shrink-0 font-medium text-brand-600">{s.board}</span>
+                        </span>
                       </span>
-                      <Icon name="chevronRight" className="h-4 w-4 text-brand-400" />
+                      <Icon name="chevronRight" className="h-4 w-4 shrink-0 text-brand-400" />
                     </Link>
                   </li>
                 ))}
@@ -110,6 +126,29 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
                 </li>
               </ul>
             ) : null}
+          </div>
+
+          {/* Need help choosing — compact help card (scrolls with the menu) */}
+          <div className="mt-3 rounded-xl bg-brand-600 p-4 text-white">
+            <p className="text-sm font-bold">Not sure which campus?</p>
+            <p className="mt-1 text-xs leading-relaxed text-brand-100">
+              Tell us your area and preferred board — we&rsquo;ll help you find the right fit.
+            </p>
+            <div className="mt-3 flex flex-col gap-2">
+              <Link href="/admissions" onClick={onClose} className="btn-gold w-full">
+                Talk to Admissions
+              </Link>
+              <a
+                href={whatsappLink('Hi, I would like help choosing the right L. P. Savani campus.')}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={onClose}
+                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white/90 hover:text-white"
+              >
+                <Icon name="whatsapp" className="h-4 w-4" />
+                Chat on WhatsApp
+              </a>
+            </div>
           </div>
         </nav>
 
