@@ -16,6 +16,8 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -44,6 +46,22 @@ export default function Header() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
+  useEffect(() => {
+    if (!megaOpen) return;
+    const onPointerDown = (e: PointerEvent) => {
+      const t = e.target as Node;
+      if (triggerRef.current?.contains(t) || panelRef.current?.contains(t)) return;
+      setMegaOpen(false);
+    };
+    const onScroll = () => setMegaOpen(false);
+    document.addEventListener('pointerdown', onPointerDown);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown);
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, [megaOpen]);
+
   const openMega = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setMegaOpen(true);
@@ -68,6 +86,7 @@ export default function Header() {
             l.label === 'Schools' ? (
               <div
                 key={l.href}
+                ref={triggerRef}
                 className="relative"
                 onMouseEnter={openMega}
                 onMouseLeave={scheduleCloseMega}
@@ -129,7 +148,10 @@ export default function Header() {
             megaOpen ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0'
           }`}
         >
-          <div className="mt-2 max-h-[80vh] overflow-y-auto rounded-2xl border border-cloud bg-white p-5 shadow-lift">
+          <div
+            ref={panelRef}
+            className="mt-2 max-h-[80vh] overflow-y-auto rounded-2xl border border-cloud bg-white p-5 shadow-lift"
+          >
             <MegaMenu onNavigate={() => setMegaOpen(false)} />
           </div>
         </div>
