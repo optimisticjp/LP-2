@@ -8,6 +8,7 @@
 
 const G = 'https://s3.ap-south-1.amazonaws.com/media.lpsavani.org';
 const A = 'https://s3.ap-south-1.amazonaws.com/media.lpsv.edu.in';
+const PAL = 'https://lpsavanischool.edu.in/wp-content/uploads';
 
 export const images = {
   // Brand marks — local, self-hosted files in /public/brand (sharp, no remote load).
@@ -80,6 +81,15 @@ export const images = {
   adajanScience: `${A}/4_03288ccc86.png`,
   adajanMusic: `${A}/10_d1dd52e9e3.png`,
   adajanCafeteria: `${A}/8_81df05a214.png`,
+
+  // Palanpor campus — real photos from its own site (lpsavanischool.edu.in)
+  palanporHero: `${PAL}/2026/04/LP-Savani-School-Palanpor-Surat.png`,
+  palanporGallery1: `${PAL}/2026/04/Gallery-Img-1-scaled.jpg`,
+  palanporGallery2: `${PAL}/2026/04/Gallery-Img-2-scaled.jpg`,
+  palanporGallery4: `${PAL}/2026/04/Gallery-Img-4-scaled.jpg`,
+  palanporEvent1: `${PAL}/2026/05/Parivartan-scaled.jpeg`,
+  palanporEvent2: `${PAL}/2026/05/KARALO-scaled.jpeg`,
+  palanporEvent3: `${PAL}/2026/05/Inspiring-Minds.-Enriching-Lives.-Building-a-Better-Tomorrow-scaled.jpeg`,
 } as const;
 
 export type ImageKey = keyof typeof images;
