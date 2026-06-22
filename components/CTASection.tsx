@@ -33,7 +33,7 @@ export default function CTASection({
             <p className="mx-auto mt-4 max-w-xl text-brand-100">{subtitle}</p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link href="/admissions" className="btn-gold">
-                Apply Now
+                Start Admission Enquiry
               </Link>
               <Link href="/admissions#tour" className="btn-white">
                 Book a Campus Tour

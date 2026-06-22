@@ -97,7 +97,7 @@ export default function HomePage() {
                 href="/admissions#tour"
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 underline-offset-2 hover:underline"
               >
-                Book a campus tour
+                Book a Campus Tour
                 <Icon name="arrow" className="h-4 w-4" />
               </Link>
             </div>

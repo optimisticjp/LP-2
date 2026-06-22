@@ -7,7 +7,7 @@ import Logo from '@/components/Logo';
 import Img from '@/components/Img';
 import { Icon } from '@/components/icons';
 import { mainNav, megaSchools } from '@/data/navigation';
-import { site, whatsappLink } from '@/data/site';
+import { whatsappLink } from '@/data/site';
 
 export default function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [mounted, setMounted] = useState(false);
@@ -153,24 +153,11 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
         </nav>
 
         <div
-          className="grid grid-cols-2 gap-2 border-t border-cloud p-4"
+          className="border-t border-cloud p-4"
           style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}
         >
-          <a href={`tel:${site.primaryPhoneTel}`} className="btn-secondary">
-            <Icon name="phone" className="h-4 w-4" /> Call
-          </a>
-
-          <a
-            href={whatsappLink('Hi, I have an admission enquiry for L. P. Savani.')}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-whatsapp"
-          >
-            <Icon name="whatsapp" className="h-4 w-4" /> WhatsApp
-          </a>
-
-          <Link href="/admissions" onClick={onClose} className="btn-primary col-span-2">
-            Apply for {site.admissionsYear}
+          <Link href="/admissions" onClick={onClose} className="btn-primary w-full">
+            Start Admission Enquiry
           </Link>
         </div>
       </div>

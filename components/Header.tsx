@@ -124,8 +124,8 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link href="/admissions" className="btn-primary hidden sm:inline-flex">
-            Apply Now
+          <Link href="/admissions" className="btn-primary hidden whitespace-nowrap sm:inline-flex">
+            Start Admission Enquiry
           </Link>
           <button
             type="button"

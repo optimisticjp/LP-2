@@ -172,7 +172,7 @@ export default function AdmissionsPage() {
           <div className="grid items-start gap-8 lg:grid-cols-2">
             <div>
               <Badge tone="gold" icon="pin">
-                Book a campus tour
+                Book a Campus Tour
               </Badge>
               <h2 className="mt-4 text-3xl font-bold leading-tight text-ink">See a campus in person</h2>
               <p className="mt-3 text-ink-soft">

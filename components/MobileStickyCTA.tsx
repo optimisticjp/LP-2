@@ -19,7 +19,7 @@ export default function MobileStickyCTA() {
   return (
     <nav
       aria-label="Quick actions"
-      className="fixed inset-x-0 bottom-0 z-30 border-t border-cloud bg-white/95 backdrop-blur lg:hidden"
+      className="fixed inset-x-0 bottom-0 z-30 border-t border-cloud/80 bg-white/95 backdrop-blur shadow-[0_-2px_10px_rgba(11,35,68,0.05)] lg:hidden"
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
       <ul className="grid grid-cols-4">
@@ -32,7 +32,7 @@ export default function MobileStickyCTA() {
                 rel={it.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className="flex flex-col items-center gap-1 whitespace-nowrap py-2.5 text-xs font-semibold text-ink-soft"
               >
-                <Icon name={it.icon} className="h-5 w-5 text-brand-600" />
+                <Icon name={it.icon} className="h-[18px] w-[18px] text-brand-600" />
                 {it.label}
               </a>
             </li>
@@ -41,12 +41,12 @@ export default function MobileStickyCTA() {
               <Link
                 href={it.href}
                 className={`flex flex-col items-center gap-1 whitespace-nowrap py-2.5 text-xs font-semibold ${
-                  it.primary ? 'bg-brand-600 text-white' : 'text-ink-soft'
+                  it.primary ? 'bg-brand-600 text-white rounded-xl mx-1 my-1.5' : 'text-ink-soft'
                 }`}
               >
                 <Icon
                   name={it.icon}
-                  className={`h-5 w-5 ${it.primary ? 'text-white' : 'text-brand-600'}`}
+                  className={`h-[18px] w-[18px] ${it.primary ? 'text-white' : 'text-brand-600'}`}
                 />
                 {it.label}
               </Link>

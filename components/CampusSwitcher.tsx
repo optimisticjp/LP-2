@@ -43,7 +43,7 @@ function CampusCard({ s }: { s: School }) {
             View Campus
           </Link>
           <a href={s.admissionLink} target="_blank" rel="noopener noreferrer" className="btn-secondary">
-            Enquire
+            Start Admission Enquiry
           </a>
         </div>
       </div>
@@ -249,7 +249,7 @@ export default function CampusSwitcher() {
                       rel="noopener noreferrer"
                       className="btn-secondary"
                     >
-                      Enquire
+                      Start Admission Enquiry
                     </a>
                   </div>
                 </div>

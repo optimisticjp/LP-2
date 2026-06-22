@@ -82,7 +82,7 @@ export default function TourForm() {
 
       <div className="sm:col-span-2">
         <button type="submit" className="btn-gold w-full sm:w-auto">
-          Book my campus tour
+          Book a Campus Tour
         </button>
       </div>
     </form>

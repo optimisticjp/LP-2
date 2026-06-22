@@ -64,7 +64,7 @@ export default function BranchLanding({ school }: { school: School }) {
               rel="noopener noreferrer"
               className="btn-whatsapp"
             >
-              <Icon name="whatsapp" className="h-4 w-4" /> WhatsApp
+              <Icon name="whatsapp" className="h-4 w-4" /> Chat on WhatsApp
             </a>
           </div>
         </Container>
@@ -244,7 +244,7 @@ export default function BranchLanding({ school }: { school: School }) {
                   rel="noopener noreferrer"
                   className="btn-whatsapp"
                 >
-                  <Icon name="whatsapp" className="h-4 w-4" /> WhatsApp
+                  <Icon name="whatsapp" className="h-4 w-4" /> Chat on WhatsApp
                 </a>
               </div>
               <Link
@@ -271,7 +271,7 @@ export default function BranchLanding({ school }: { school: School }) {
                 rel="noopener noreferrer"
                 className="btn-secondary w-full justify-center sm:w-auto"
               >
-                <Icon name="pin" className="h-4 w-4" /> Get directions
+                <Icon name="pin" className="h-4 w-4" /> Get Directions
               </a>
             </div>
           </div>
