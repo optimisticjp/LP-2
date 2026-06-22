@@ -5,6 +5,7 @@ import Img from '@/components/Img';
 import Badge from '@/components/Badge';
 import ImageCard from '@/components/ImageCard';
 import CTASection from '@/components/CTASection';
+import PalanporShowcase from '@/components/PalanporShowcase';
 import { Icon, type IconName } from '@/components/icons';
 import type { School } from '@/data/schools';
 import { whatsappLink } from '@/data/site';
@@ -202,6 +203,8 @@ export default function BranchLanding({ school }: { school: School }) {
           </div>
         </Container>
       </section>
+
+      {school.slug === 'palanpor' && <PalanporShowcase />}
 
       {/* Contact block */}
       <section className="bg-white section-y">

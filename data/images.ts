@@ -90,6 +90,13 @@ export const images = {
   palanporEvent1: `${PAL}/2026/05/Parivartan-scaled.jpeg`,
   palanporEvent2: `${PAL}/2026/05/KARALO-scaled.jpeg`,
   palanporEvent3: `${PAL}/2026/05/Inspiring-Minds.-Enriching-Lives.-Building-a-Better-Tomorrow-scaled.jpeg`,
+
+  // Palanpor showcase — alumni "pride" portraits and expert-session photos
+  prideMudhrika: `${PAL}/2026/05/Dr.-Mudhrika-S-Patel.jpg`,
+  prideVatsal: `${PAL}/2026/05/Dr.Vatsal-Bharatkumar-Patel.jpg`,
+  prideJemish: `${PAL}/2026/05/Jemish-Harshadbhai-Parmar.jpg`,
+  prideDarsh: `${PAL}/2026/05/Darsh-Prajapati.jpg`,
+  expertAshish: `${PAL}/2026/05/Ashish-Vidyarthi-scaled.jpeg`,
 } as const;
 
 export type ImageKey = keyof typeof images;
