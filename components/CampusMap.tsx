@@ -8,41 +8,19 @@ import { schools } from '@/data/schools';
 // NOT positioned at real coordinates. Pin cards link to each branch page.
 export default function CampusMap() {
   return (
-    <section className="relative overflow-hidden bg-brand-50 section-y">
-      {/* Soft, decorative map-like backdrop in brand tints */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <svg
-          className="h-full w-full"
-          viewBox="0 0 800 400"
-          preserveAspectRatio="xMidYMid slice"
-          fill="none"
-        >
-          <path
-            d="M-40 300 C 160 240 260 350 430 270 S 720 190 880 240"
-            className="text-brand-200"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeDasharray="2 10"
-            strokeLinecap="round"
-          />
-          <path
-            d="M-40 130 C 180 90 320 190 520 120 S 760 60 880 110"
-            className="text-brand-100"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeDasharray="2 10"
-            strokeLinecap="round"
-          />
-          <circle cx="120" cy="300" r="70" className="text-brand-100" fill="currentColor" opacity="0.5" />
-          <circle cx="660" cy="120" r="90" className="text-brand-100" fill="currentColor" opacity="0.4" />
-        </svg>
-      </div>
-
+    <section
+      className="relative overflow-hidden section-y"
+      style={{
+        background:
+          'radial-gradient(50% 42% at 86% 6%, rgba(244,196,48,0.17), rgba(244,196,48,0) 70%), radial-gradient(48% 42% at 8% 2%, rgba(56,138,221,0.16), rgba(56,138,221,0) 72%), linear-gradient(180deg, #0d2749 0%, #0a1f3e 100%)',
+      }}
+    >
       <Container className="relative">
         <SectionHeading
+          light
           eyebrow="Across Surat"
           title="Campuses across Surat"
-          subtitle="A map-style overview of where you'll find us. Pick a campus to explore it in detail."
+          subtitle="Real campuses across Surat, one trusted group. Pick a campus to explore it in detail."
           align="center"
           className="mb-10"
         />
@@ -72,8 +50,8 @@ export default function CampusMap() {
           ))}
         </div>
 
-        <p className="mx-auto mt-8 max-w-xl text-center text-sm text-ink-muted">
-          Map-style view for guidance. Exact directions will be linked once confirmed with each campus office.
+        <p className="mx-auto mt-8 max-w-xl text-center text-sm text-brand-200">
+          Six campuses across Surat, each with its own page and admissions team.
         </p>
       </Container>
     </section>
