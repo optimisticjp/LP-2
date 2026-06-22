@@ -85,23 +85,6 @@ export default function HomePage() {
               {site.stats[0].value}&nbsp;students &nbsp;|&nbsp; {site.stats[1].value}&nbsp;faculty &nbsp;|&nbsp; {site.stats[2].value}&nbsp;years &nbsp;|&nbsp; Campuses across {site.city}
             </p>
 
-            {/* CTA row — clear hierarchy */}
-            <div className="mt-7 flex flex-wrap items-center gap-3">
-              <Link href="/schools" className="btn-primary">
-                Explore Schools
-              </Link>
-              <Link href="/admissions" className="btn-gold">
-                Admission Enquiry
-              </Link>
-              <Link
-                href="/admissions#tour"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 underline-offset-2 hover:underline"
-              >
-                Book a Campus Tour
-                <Icon name="arrow" className="h-4 w-4" />
-              </Link>
-            </div>
-
             {/* Campus picker */}
             <HeroCampusPicker />
           </div>

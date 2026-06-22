@@ -38,11 +38,11 @@ function CampusCard({ s }: { s: School }) {
           <Icon name="pin" className="h-4 w-4 shrink-0 text-brand-500" />
           <span className="truncate">{s.location}</span>
         </p>
-        <div className="mt-auto flex items-center gap-2 pt-4">
-          <Link href={`/schools/${s.slug}`} className="btn-primary flex-1">
+        <div className="mt-auto flex flex-col gap-2 pt-4">
+          <Link href={`/schools/${s.slug}`} className="btn-primary w-full">
             View Campus
           </Link>
-          <a href={s.admissionLink} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+          <a href={s.admissionLink} target="_blank" rel="noopener noreferrer" className="btn-secondary w-full">
             Admission Enquiry
           </a>
         </div>

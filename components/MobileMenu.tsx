@@ -53,7 +53,7 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
         </div>
 
         <nav className="min-h-0 flex-1 overflow-y-auto px-3 py-3" aria-label="Mobile">
-          <ul className="flex flex-col">
+          <ul className="flex flex-col divide-y divide-cloud">
             {mainNav
               .filter((l) => l.label !== 'Schools')
               .map((l) => (
@@ -61,9 +61,10 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
                   <Link
                     href={l.href}
                     onClick={onClose}
-                    className="flex min-h-[44px] items-center rounded-xl px-4 py-2.5 text-[15px] font-semibold text-ink hover:bg-mist"
+                    className="group flex items-center justify-between gap-3 px-2 py-2 text-[15px] font-semibold text-ink transition-colors hover:text-brand-700"
                   >
                     {l.label}
+                    <Icon name="chevronRight" className="h-4 w-4 shrink-0 text-brand-300 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </li>
               ))}

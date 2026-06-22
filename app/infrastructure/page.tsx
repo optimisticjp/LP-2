@@ -77,7 +77,7 @@ export default function InfrastructurePage() {
         </Container>
       </section>
 
-      <CTASection className="pb-20" />
+      <CTASection className="pt-12 sm:pt-16 pb-20" />
     </>
   );
 }

@@ -40,11 +40,11 @@ export default function SchoolCard({ school, showHighlights = false }: { school:
           </ul>
         ) : null}
 
-        <div className="mt-auto flex items-center gap-2 pt-5">
-          <Link href={`/schools/${school.slug}`} className="btn-primary flex-1">
+        <div className="mt-auto flex flex-col gap-2 pt-5">
+          <Link href={`/schools/${school.slug}`} className="btn-primary w-full">
             View Campus
           </Link>
-          <a href={school.admissionLink} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+          <a href={school.admissionLink} target="_blank" rel="noopener noreferrer" className="btn-secondary w-full">
             Admission Enquiry
           </a>
         </div>
