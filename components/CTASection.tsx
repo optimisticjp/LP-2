@@ -29,7 +29,7 @@ export default function CTASection({
           />
           <div className="relative mx-auto max-w-2xl text-center">
             <span className="eyebrow justify-center text-gold-300">Admissions {site.admissionsYear}</span>
-            <h2 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl">{title}</h2>
+            <h2 className="mt-3 text-balance text-3xl font-bold leading-tight text-white sm:text-4xl">{title}</h2>
             <p className="mx-auto mt-4 max-w-xl text-brand-100">{subtitle}</p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link href="/admissions" className="btn-gold">

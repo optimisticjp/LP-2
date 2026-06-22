@@ -69,13 +69,8 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-x flex flex-col items-center justify-between gap-3 py-5 text-xs text-brand-100 sm:flex-row">
+        <div className="container-x flex items-center justify-center py-5 text-xs text-brand-100">
           <p>&copy; {year} {site.name}. All rights reserved.</p>
-          <div className="flex items-center gap-4">
-            <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
-            <Link href="/cookie-policy" className="hover:text-white">Cookie Policy</Link>
-            <Link href="/proposal" className="hover:text-white">Digital Proposal</Link>
-          </div>
         </div>
       </div>
     </footer>

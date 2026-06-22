@@ -6,12 +6,10 @@ import Img from '@/components/Img';
 import Badge from '@/components/Badge';
 import StatCard from '@/components/StatCard';
 import SchoolCard from '@/components/SchoolCard';
-import CampusSwitcher from '@/components/CampusSwitcher';
 import FacilityCard from '@/components/FacilityCard';
 import GalleryGrid from '@/components/GalleryGrid';
 import TestimonialCard from '@/components/TestimonialCard';
 import CTASection from '@/components/CTASection';
-import CampusMap from '@/components/CampusMap';
 import PalanporSpotlight from '@/components/PalanporSpotlight';
 import HeroCampusPicker from '@/components/HeroCampusPicker';
 import { Icon, type IconName } from '@/components/icons';
@@ -150,23 +148,6 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
-
-      {/* 3. Campus finder */}
-      <section className="bg-white section-y">
-        <Container>
-          <SectionHeading
-            eyebrow="Which campus is right for your child?"
-            title="Find your campus"
-            subtitle="Browse every campus by location or board, or use the quick helper to find the right fit. Every campus shares the same L. P. Savani commitment to learning and care."
-            align="center"
-            className="mb-10"
-          />
-          <CampusSwitcher />
-        </Container>
-      </section>
-
-      {/* 3b. Campuses across Surat — map-style overview */}
-      <CampusMap />
 
       {/* 3c. Flagship spotlight — Palanpor */}
       <PalanporSpotlight />
