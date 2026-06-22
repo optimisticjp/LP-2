@@ -234,6 +234,27 @@ export default function PalanporShowcase() {
           <FAQAccordion items={palanporFaqs} />
         </Container>
       </section>
+
+      {/* F — Built to scale (quiet, management-facing note) */}
+      <section className="bg-white section-y">
+        <Container size="tight">
+          <div className="mx-auto max-w-2xl rounded-2xl border border-cloud p-8 text-center sm:p-10">
+            <span className="mx-auto grid h-11 w-11 place-items-center rounded-full bg-brand-50 text-brand-600">
+              <Icon name="globe" className="h-5 w-5" />
+            </span>
+            <span className="eyebrow mt-5 justify-center">Built to scale</span>
+            <h2 className="mt-3 text-3xl leading-tight text-ink sm:text-4xl">
+              How every campus website can look
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">
+              This Palanpor page lives within the L. P. Savani group site and shows what a dedicated
+              campus website can be: a strong identity, simple admissions, galleries, events and
+              updates, all in one premium experience. Each campus can have its own, built to this
+              same standard.
+            </p>
+          </div>
+        </Container>
+      </section>
     </>
   );
 }

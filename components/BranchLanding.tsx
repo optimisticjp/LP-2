@@ -46,7 +46,7 @@ export default function BranchLanding({ school }: { school: School }) {
             <Badge tone="white" icon="map">
               {school.board}
             </Badge>
-            {school.established ? <Badge tone="white">Established {school.established}</Badge> : null}
+            {school.established ? <Badge tone="white">Since {school.established}</Badge> : null}
             {school.flagship ? <Badge tone="gold">Flagship campus</Badge> : null}
           </div>
           <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-tight sm:text-5xl">{school.name}</h1>
