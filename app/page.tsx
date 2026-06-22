@@ -91,7 +91,7 @@ export default function HomePage() {
                 Explore Schools
               </Link>
               <Link href="/admissions" className="btn-gold">
-                Start Admission Enquiry
+                Admission Enquiry
               </Link>
               <Link
                 href="/admissions#tour"

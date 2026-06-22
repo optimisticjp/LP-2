@@ -53,7 +53,7 @@ export default function BranchLanding({ school }: { school: School }) {
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-100 sm:text-lg">{school.tagline}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={school.admissionLink} target="_blank" rel="noopener noreferrer" className="btn-gold">
-              Start Admission Enquiry
+              Admission Enquiry
             </a>
             <a href={`tel:${phone.tel}`} className="btn-white">
               <Icon name="phone" className="h-4 w-4" /> Call

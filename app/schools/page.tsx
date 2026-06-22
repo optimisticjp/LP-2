@@ -111,7 +111,7 @@ export default function SchoolsPage() {
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 font-semibold leading-tight text-brand-700 hover:underline"
                         >
-                          Start Admission Enquiry <Icon name="arrowUpRight" className="h-3.5 w-3.5 shrink-0" />
+                          Admission Enquiry <Icon name="arrowUpRight" className="h-3.5 w-3.5 shrink-0" />
                         </a>
                       </div>
                     </td>

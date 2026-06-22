@@ -53,7 +53,7 @@ export default function HeroCampusPicker() {
           rel="noopener noreferrer"
           className="btn-secondary"
         >
-          Start Admission Enquiry
+          Admission Enquiry
         </a>
       </div>
     </div>

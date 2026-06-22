@@ -58,7 +58,7 @@ export default function BranchSelector() {
             rel="noopener noreferrer"
             className="btn-primary w-full"
           >
-            Start Admission Enquiry
+            Admission Enquiry
           </a>
           <Link href={`/schools/${school.slug}`} className="btn-secondary w-full">
             View Campus

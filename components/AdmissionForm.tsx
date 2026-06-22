@@ -94,7 +94,7 @@ export default function AdmissionForm({ compact = false }: { compact?: boolean }
 
       <div className="sm:col-span-2">
         <button type="submit" className="btn-primary w-full sm:w-auto">
-          Start Admission Enquiry
+          Admission Enquiry
         </button>
         <p className="mt-3 text-xs text-ink-muted">
           By submitting, you agree to be contacted by the admissions office. We never share your details.

@@ -45,7 +45,7 @@ export default function SchoolCard({ school, showHighlights = false }: { school:
             View Campus
           </Link>
           <a href={school.admissionLink} target="_blank" rel="noopener noreferrer" className="btn-secondary">
-            Start Admission Enquiry
+            Admission Enquiry
           </a>
         </div>
       </div>

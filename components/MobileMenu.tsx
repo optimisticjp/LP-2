@@ -157,7 +157,7 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
           style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}
         >
           <Link href="/admissions" onClick={onClose} className="btn-primary w-full">
-            Start Admission Enquiry
+            Admission Enquiry
           </Link>
         </div>
       </div>

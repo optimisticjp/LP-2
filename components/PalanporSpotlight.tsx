@@ -52,7 +52,7 @@ export default function PalanporSpotlight() {
                 rel="noopener noreferrer"
                 className="btn-gold w-full sm:w-auto"
               >
-                Start Admission Enquiry
+                Admission Enquiry
               </a>
             </div>
           </div>
