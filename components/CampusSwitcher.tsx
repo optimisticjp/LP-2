@@ -118,7 +118,7 @@ export default function CampusSwitcher() {
                   tabIndex={active ? 0 : -1}
                   onClick={() => setTab(t.id)}
                   onKeyDown={(e) => onTabKey(e, i)}
-                  className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                  className={`min-h-[44px] rounded-full px-4 py-2.5 text-sm font-semibold transition-colors ${
                     active ? 'bg-brand-600 text-white shadow-soft' : 'text-ink-soft hover:text-ink'
                   }`}
                 >

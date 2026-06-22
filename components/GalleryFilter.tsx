@@ -20,7 +20,7 @@ export default function GalleryFilter({
           role="tab"
           aria-selected={active === c}
           onClick={() => onChange(c)}
-          className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+          className={`shrink-0 min-h-[44px] rounded-full px-4 py-2.5 text-sm font-semibold transition-colors ${
             active === c ? 'bg-brand-600 text-white' : 'bg-mist text-ink-soft hover:bg-cloud'
           }`}
         >

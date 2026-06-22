@@ -19,9 +19,9 @@ export default function BranchSelector() {
             type="button"
             onClick={() => setActive(i)}
             aria-pressed={i === active}
-            className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition-all ${
+            className={`shrink-0 min-h-[44px] rounded-full px-4 py-2.5 text-sm font-semibold transition-all ${
               i === active
-                ? 'bg-brand-600 text-white shadow-soft ring-1 ring-brand-600/20'
+                ? 'bg-brand-600 text-white shadow-soft ring-2 ring-gold-400'
                 : 'bg-mist text-ink-soft ring-1 ring-transparent hover:bg-cloud hover:text-ink'
             }`}
           >

@@ -14,6 +14,7 @@ type Errors = Partial<Record<'parentName' | 'phone' | 'visitDate', string>>;
 
 export default function TourForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
 
   // Minimum selectable date is today.
@@ -35,8 +36,8 @@ export default function TourForm() {
 
     setErrors(next);
     if (Object.keys(next).length === 0) {
-      setSubmitted(true);
-      form.reset();
+      setSubmitting(true);
+      setTimeout(() => setSubmitted(true), 700);
     }
   }
 
@@ -81,8 +82,18 @@ export default function TourForm() {
       </Field>
 
       <div className="sm:col-span-2">
-        <button type="submit" className="btn-gold w-full sm:w-auto">
-          Book a Campus Tour
+        <button type="submit" disabled={submitting} className="btn-gold w-full sm:w-auto">
+          {submitting ? (
+            <>
+              <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 0 1 8-8v4a4 4 0 0 0-4 4H4z" />
+              </svg>
+              Sending…
+            </>
+          ) : (
+            'Book a Campus Tour'
+          )}
         </button>
       </div>
     </form>

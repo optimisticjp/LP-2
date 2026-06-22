@@ -150,7 +150,7 @@ export default function Header() {
         >
           <div
             ref={panelRef}
-            className="mt-2 max-h-[80vh] overflow-y-auto rounded-2xl border border-cloud bg-white p-5 shadow-lift"
+            className="mt-2 max-h-[calc(100vh-8rem)] overflow-y-auto rounded-2xl border border-cloud bg-white p-5 shadow-lift"
           >
             <MegaMenu onNavigate={() => setMegaOpen(false)} />
           </div>

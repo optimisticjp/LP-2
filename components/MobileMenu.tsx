@@ -61,7 +61,7 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
                   <Link
                     href={l.href}
                     onClick={onClose}
-                    className="block rounded-xl px-4 py-2.5 text-[15px] font-semibold text-ink hover:bg-mist"
+                    className="flex min-h-[44px] items-center rounded-xl px-4 py-2.5 text-[15px] font-semibold text-ink hover:bg-mist"
                   >
                     {l.label}
                   </Link>
@@ -119,7 +119,7 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
                   <Link
                     href="/schools"
                     onClick={onClose}
-                    className="block rounded-lg px-3 py-2 text-sm font-semibold text-brand-600 hover:bg-white"
+                    className="flex min-h-[44px] items-center rounded-lg px-3 py-2 text-sm font-semibold text-brand-600 hover:bg-white"
                   >
                     Compare all campuses
                   </Link>
