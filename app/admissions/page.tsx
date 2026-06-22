@@ -205,19 +205,19 @@ export default function AdmissionsPage() {
       {/* WhatsApp CTA */}
       <section className="bg-white pb-20 pt-4">
         <Container>
-          <div className="flex flex-col items-center justify-between gap-5 rounded-3xl bg-[#22B455] p-8 text-center text-white sm:flex-row sm:p-10 sm:text-left">
+          <div className="flex flex-col items-center justify-between gap-5 rounded-3xl bg-deepNavy p-8 text-center text-white sm:flex-row sm:p-10 sm:text-left">
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
-              <Icon name="whatsapp" className="h-10 w-10" />
+              <Icon name="whatsapp" className="h-10 w-10 text-gold-300" />
               <div>
                 <h3 className="text-xl font-bold">Prefer to chat?</h3>
-                <p className="text-sm text-white/90">Message our admissions team on WhatsApp for a quick reply.</p>
+                <p className="text-sm text-brand-100">Message our admissions team on WhatsApp for a quick reply.</p>
               </div>
             </div>
             <a
               href={whatsappLink('Hi, I would like to enquire about admissions at L. P. Savani for ' + site.admissionsYear + '.')}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-white w-full shrink-0 sm:w-auto"
+              className="btn-whatsapp w-full shrink-0 sm:w-auto"
             >
               Chat on WhatsApp
             </a>
