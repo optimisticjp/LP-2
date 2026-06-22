@@ -12,6 +12,7 @@ import GalleryGrid from '@/components/GalleryGrid';
 import TestimonialCard from '@/components/TestimonialCard';
 import CTASection from '@/components/CTASection';
 import CampusMap from '@/components/CampusMap';
+import PalanporSpotlight from '@/components/PalanporSpotlight';
 import HeroCampusPicker from '@/components/HeroCampusPicker';
 import { Icon, type IconName } from '@/components/icons';
 import { schools } from '@/data/schools';
@@ -183,6 +184,9 @@ export default function HomePage() {
 
       {/* 3b. Campuses across Surat — map-style overview */}
       <CampusMap />
+
+      {/* 3c. Flagship spotlight — Palanpor */}
+      <PalanporSpotlight />
 
       {/* 4. Why L. P. Savani */}
       <section className="bg-mist section-y">

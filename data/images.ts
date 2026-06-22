@@ -83,6 +83,10 @@ export const images = {
   adajanCafeteria: `${A}/8_81df05a214.png`,
 
   // Palanpor campus — real photos from its own site (lpsavanischool.edu.in)
+  // Single representative photo used everywhere Palanpor appears as one image
+  // (mega menu, mobile menu, campus finder, schools card, branch hero). Swap
+  // this one key to change the photo in all those places at once.
+  palanporPhoto: 'https://s3.ap-south-1.amazonaws.com/media.lpsavani.org/adajan_11249a68ba.jpg',
   palanporHero: `${PAL}/2026/04/LP-Savani-School-Palanpor-Surat.png`,
   palanporGallery1: `${PAL}/2026/04/Gallery-Img-1-scaled.jpg`,
   palanporGallery2: `${PAL}/2026/04/Gallery-Img-2-scaled.jpg`,

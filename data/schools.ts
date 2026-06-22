@@ -69,8 +69,8 @@ export const schools: School[] = [
     admissionLink:
       'https://lpsavanipalanpor.onlinevidyalaya.net/Pages/OnlineAdmission/AdmissionInquiryForm.aspx?OrgGroupId=2256',
     leadership: [{ name: 'Dr. Kshitij Patel', role: 'Principal' }],
-    thumb: images.palanporHero,
-    hero: images.palanporHero,
+    thumb: images.palanporPhoto,
+    hero: images.palanporPhoto,
     gallery: [images.palanporGallery1, images.palanporGallery2, images.palanporGallery4, images.palanporEvent1, images.palanporEvent2, images.palanporEvent3],
   },
   {
